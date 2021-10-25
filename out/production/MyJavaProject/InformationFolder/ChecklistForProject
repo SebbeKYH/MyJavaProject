@@ -1,0 +1,12 @@
+* Choose a mode of transportation
+* Choose a starting point and save it
+* Choose a destination point and save it
+* Choose number of passengers
+* Choose different kinds of passengers
+* Choose different kinds of prices
+* Discounts for different kinds of combination
+* FileReader for output
+
+- StartCost should be 1000
+- DestinationCost should be less
+- Thereby the cost of a travel is calculated by startCost-destinationCost
