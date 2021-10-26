@@ -38,12 +38,23 @@ public class Main {
                                 +destinationStockholm.routeDestination;
                         System.out.println(malmoStockholm);
 
+                        //Read transportFile
+                        File malmoStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoStockholmFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
                         //Choose transportation
                         System.out.println("Choose transportation alternative: ");
-                        Scanner case1transportScan = new Scanner(System.in);
+                        Scanner malmoStockholmtransportScan = new Scanner(System.in);
                         System.out.print(">");
 
-                        switch (case1transportScan.nextInt()){
+                        switch (malmoStockholmtransportScan.nextInt()){
                             case 1:
                                 break;
                             case 2:
@@ -60,6 +71,31 @@ public class Main {
                         String malmoVasteras= startMalmo.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(malmoVasteras);
+
+                        // Read transportFile
+                        File malmoVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoVasterasFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -69,6 +105,32 @@ public class Main {
                         String malmoMolndal= startMalmo.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(malmoMolndal);
+
+                        // Read transportFile
+                        File malmoMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoMolndalFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -78,6 +140,31 @@ public class Main {
                         String malmoKiruna= startMalmo.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(malmoKiruna);
+
+                        // Read transportFile
+                        File malmoKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoKirunaFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -87,6 +174,31 @@ public class Main {
                         String malmoSkara= startMalmo.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(malmoSkara);
+
+                        // Read transportFile
+                        File malmoSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoSkaraFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -96,6 +208,32 @@ public class Main {
                         String malmoLulea= startMalmo.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(malmoLulea);
+
+                        // Read transportFile
+                        File malmoLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoLuleaFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -105,6 +243,32 @@ public class Main {
                         String malmoMaglehem= startMalmo.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(malmoMaglehem);
+
+                        // Read transportFile
+                        File malmoMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoMaglehemFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -114,6 +278,31 @@ public class Main {
                         String malmoStehag= startMalmo.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(malmoStehag);
+
+                        // Read transportFile
+                        File malmoStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoStehagFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -123,6 +312,31 @@ public class Main {
                         String malmoEslov= startMalmo.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(malmoEslov);
+
+                        // Read transportFile
+                        File malmoEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                        try {
+                            Scanner transportScanner = new Scanner(malmoEslovFile);
+                            while (transportScanner.hasNextLine()) {
+                                System.out.println(transportScanner.nextLine());
+                            }
+                        }
+                        catch(FileNotFoundException e){
+                            System.out.println("Trouble reading file");
+                        }
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner malmoEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (malmoEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -144,6 +358,20 @@ public class Main {
                         String stockholmMalmo= startStockholm.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(stockholmMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         System.out.println("You cant have the same destination as starting point.");
@@ -156,6 +384,20 @@ public class Main {
                         String stockholmVasteras= startStockholm.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(stockholmVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -165,6 +407,20 @@ public class Main {
                         String stockholmMolndal= startStockholm.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(stockholmMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -174,6 +430,20 @@ public class Main {
                         String stockholmKiruna= startStockholm.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(stockholmKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -183,6 +453,20 @@ public class Main {
                         String stockholmSkara= startStockholm.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(stockholmSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -192,6 +476,20 @@ public class Main {
                         String stockholmLulea= startStockholm.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(stockholmLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -201,6 +499,20 @@ public class Main {
                         String stockholmMaglehem= startStockholm.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(stockholmMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -210,6 +522,20 @@ public class Main {
                         String stockholmStehag= startStockholm.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(stockholmStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -219,6 +545,20 @@ public class Main {
                         String stockholmEslov= startStockholm.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(stockholmEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stockholmEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stockholmEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -240,6 +580,20 @@ public class Main {
                         String vasterasMalmo= startVasteras.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(vasterasMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -249,6 +603,20 @@ public class Main {
                         String vasterasStockholm= startVasteras.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(vasterasStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         System.out.println("You cant have the same destination as starting point.");
@@ -261,6 +629,20 @@ public class Main {
                         String vasterasMolndal= startVasteras.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(vasterasMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -270,6 +652,19 @@ public class Main {
                         String vasterasKiruna= startVasteras.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(vasterasKiruna);
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -279,6 +674,20 @@ public class Main {
                         String vasterasSkara= startVasteras.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(vasterasSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -288,6 +697,20 @@ public class Main {
                         String vasterasLulea= startVasteras.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(vasterasLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -297,6 +720,20 @@ public class Main {
                         String vasterasMaglehem= startVasteras.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(vasterasMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -306,6 +743,20 @@ public class Main {
                         String vasterasStehag= startVasteras.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(vasterasStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -315,6 +766,20 @@ public class Main {
                         String vasterasEslov= startVasteras.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(vasterasEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner vasterasEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (vasterasEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -336,6 +801,20 @@ public class Main {
                         String molndalMalmo= startMolndal.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(molndalMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -345,6 +824,20 @@ public class Main {
                         String molndalStockholm= startMolndal.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(molndalStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -354,6 +847,20 @@ public class Main {
                         String molndalVasteras= startMolndal.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(molndalVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         System.out.println("You cant have the same destination as starting point.");
@@ -366,6 +873,20 @@ public class Main {
                         String molndalKiruna= startMolndal.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(molndalKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -375,6 +896,20 @@ public class Main {
                         String molndalSkara= startMolndal.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(molndalSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -384,6 +919,20 @@ public class Main {
                         String molndalLulea= startMolndal.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(molndalLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -393,6 +942,20 @@ public class Main {
                         String molndalMaglehem= startMolndal.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(molndalMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -402,6 +965,20 @@ public class Main {
                         String molndalStehag= startMolndal.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(molndalStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -411,6 +988,20 @@ public class Main {
                         String molndalEslov= startMolndal.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(molndalEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner molndalEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (molndalEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -432,6 +1023,20 @@ public class Main {
                         String kirunaMalmo= startKiruna.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(kirunaMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -441,6 +1046,20 @@ public class Main {
                         String kirunaStockholm= startKiruna.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(kirunaStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -450,6 +1069,20 @@ public class Main {
                         String kirunaVasteras= startKiruna.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(kirunaVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -459,6 +1092,20 @@ public class Main {
                         String kirunaMolndal= startKiruna.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(kirunaMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         System.out.println("You cant have the same destination as starting point.");
@@ -471,6 +1118,20 @@ public class Main {
                         String kirunaSkara= startKiruna.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(kirunaSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -480,6 +1141,20 @@ public class Main {
                         String kirunaLulea= startKiruna.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(kirunaLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -489,6 +1164,20 @@ public class Main {
                         String kirunaMaglehem= startKiruna.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(kirunaMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -498,6 +1187,20 @@ public class Main {
                         String kirunaStehag= startKiruna.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(kirunaStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -507,6 +1210,20 @@ public class Main {
                         String kirunaEslov= startKiruna.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(kirunaEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner kirunaEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (kirunaEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -528,6 +1245,20 @@ public class Main {
                         String skaraMalmo= startSkara.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(skaraMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -537,6 +1268,20 @@ public class Main {
                         String skaraStockholm= startSkara.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(skaraStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -546,6 +1291,20 @@ public class Main {
                         String skaraVasteras= startSkara.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(skaraVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -555,6 +1314,20 @@ public class Main {
                         String skaraMolndal= startSkara.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(skaraMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -564,6 +1337,20 @@ public class Main {
                         String skaraKiruna= startSkara.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(skaraKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         System.out.println("You cant have the same destination as starting point.");
@@ -576,6 +1363,20 @@ public class Main {
                         String skaraLulea= startSkara.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(skaraLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -585,6 +1386,20 @@ public class Main {
                         String skaraMaglehem= startSkara.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(skaraMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -594,6 +1409,20 @@ public class Main {
                         String skaraStehag= startSkara.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(skaraStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -603,6 +1432,20 @@ public class Main {
                         String skaraEslov= startSkara.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(skaraEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner skaraEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (skaraEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -625,6 +1468,20 @@ public class Main {
                                 +destinationMalmo.routeDestination;
                         System.out.println(luleaMalmo);
 
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
+
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -634,6 +1491,20 @@ public class Main {
                         String luleaStockholm= startLulea.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(luleaStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -643,6 +1514,20 @@ public class Main {
                         String luleaVasteras= startLulea.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(luleaVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -652,6 +1537,20 @@ public class Main {
                         String luleaMolndal= startLulea.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(luleaMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -661,6 +1560,20 @@ public class Main {
                         String luleaKiruna= startLulea.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(luleaKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -670,6 +1583,20 @@ public class Main {
                         String luleaSkara= startLulea.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(luleaSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         System.out.println("You cant have the same destination as starting point.");
@@ -682,6 +1609,20 @@ public class Main {
                         String luleaMaglehem= startLulea.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(luleaMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -691,6 +1632,20 @@ public class Main {
                         String luleaStehag= startLulea.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(luleaStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -700,6 +1655,20 @@ public class Main {
                         String luleaEslov= startLulea.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(luleaEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner luleaEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (luleaEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -721,6 +1690,20 @@ public class Main {
                         String maglehemMalmo= startMaglehem.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(maglehemMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -730,6 +1713,20 @@ public class Main {
                         String maglehemStockholm= startMaglehem.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(maglehemStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -739,6 +1736,20 @@ public class Main {
                         String maglehemVasteras= startMaglehem.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(maglehemVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -748,6 +1759,20 @@ public class Main {
                         String maglehemMolndal= startMaglehem.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(maglehemMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -757,6 +1782,20 @@ public class Main {
                         String maglehemKiruna= startMaglehem.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(maglehemKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -766,6 +1805,20 @@ public class Main {
                         String maglehemSkara= startMaglehem.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(maglehemSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -775,6 +1828,20 @@ public class Main {
                         String maglehemLulea= startMaglehem.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(maglehemLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         System.out.println("You cant have the same destination as starting point.");
@@ -787,6 +1854,20 @@ public class Main {
                         String maglehemStehag= startMaglehem.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(maglehemStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         routeDestination destinationEslov = new routeDestination("Eslöv", 500);
@@ -796,6 +1877,20 @@ public class Main {
                         String maglehemEslov= startMaglehem.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(maglehemEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner maglehemEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (maglehemEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -817,6 +1912,20 @@ public class Main {
                         String stehagMalmo= startStehag.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(stehagMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -826,6 +1935,20 @@ public class Main {
                         String stehagStockholm= startStehag.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(stehagStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -835,6 +1958,20 @@ public class Main {
                         String stehagVasteras= startStehag.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(stehagVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -844,6 +1981,20 @@ public class Main {
                         String stehagMolndal= startStehag.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(stehagMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -853,6 +2004,20 @@ public class Main {
                         String stehagKiruna= startStehag.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(stehagKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -862,6 +2027,20 @@ public class Main {
                         String stehagSkara= startStehag.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(stehagSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -871,6 +2050,20 @@ public class Main {
                         String stehagLulea= startStehag.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(stehagLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -880,6 +2073,20 @@ public class Main {
                         String stehagMaglehem= startStehag.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(stehagMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         System.out.println("You cant have the same destination as starting point.");
@@ -892,6 +2099,20 @@ public class Main {
                         String stehagEslov= startStehag.routeStart +"----->"
                                 +destinationEslov.routeDestination;
                         System.out.println(stehagEslov);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner stehagEslovtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (stehagEslovtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                 }
                 break;
@@ -913,6 +2134,20 @@ public class Main {
                         String eslovMalmo= startEslov.routeStart +"----->"
                                 +destinationMalmo.routeDestination;
                         System.out.println(eslovMalmo);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovMalmotransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovMalmotransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 2:
                         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
@@ -922,6 +2157,20 @@ public class Main {
                         String eslovStockholm= startEslov.routeStart +"----->"
                                 +destinationStockholm.routeDestination;
                         System.out.println(eslovStockholm);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovStockholmtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovStockholmtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 3:
                         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
@@ -931,6 +2180,20 @@ public class Main {
                         String eslovVasteras= startEslov.routeStart +"----->"
                                 +destinationVasteras.routeDestination;
                         System.out.println(eslovVasteras);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovVasterastransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovVasterastransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 4:
                         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
@@ -940,6 +2203,20 @@ public class Main {
                         String eslovMolndal= startEslov.routeStart +"----->"
                                 +destinationMolndal.routeDestination;
                         System.out.println(eslovMolndal);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovMolndaltransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovMolndaltransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 5:
                         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
@@ -949,6 +2226,20 @@ public class Main {
                         String eslovKiruna= startEslov.routeStart +"----->"
                                 +destinationKiruna.routeDestination;
                         System.out.println(eslovKiruna);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovKirunatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovKirunatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 6:
                         routeDestination destinationSkara = new routeDestination("Skara", 300);
@@ -958,6 +2249,20 @@ public class Main {
                         String eslovSkara= startEslov.routeStart +"----->"
                                 +destinationSkara.routeDestination;
                         System.out.println(eslovSkara);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovSkaratransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovSkaratransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 7:
                         routeDestination destinationLulea = new routeDestination("Luleå", 350);
@@ -967,6 +2272,20 @@ public class Main {
                         String eslovLulea= startEslov.routeStart +"----->"
                                 +destinationLulea.routeDestination;
                         System.out.println(eslovLulea);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovLuleatransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovLuleatransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 8:
                         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
@@ -976,6 +2295,20 @@ public class Main {
                         String eslovMaglehem= startEslov.routeStart +"----->"
                                 +destinationMaglehem.routeDestination;
                         System.out.println(eslovMaglehem);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovMaglehemtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovMaglehemtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 9:
                         routeDestination destinationStehag = new routeDestination("Stehag", 450);
@@ -985,6 +2318,20 @@ public class Main {
                         String eslovStehag= startEslov.routeStart +"----->"
                                 +destinationStehag.routeDestination;
                         System.out.println(eslovStehag);
+
+                        //Choose transportation
+                        System.out.println("Choose transportation alternative: ");
+                        Scanner eslovStehagtransportScan = new Scanner(System.in);
+                        System.out.print(">");
+
+                        switch (eslovStehagtransportScan.nextInt()){
+                            case 1:
+                                break;
+                            case 2:
+                                break;
+                            case 3:
+                                break;
+                        }
                         break;
                     case 10:
                         System.out.println("You cant have the same destination as starting point.");
