@@ -6,7 +6,13 @@
 * Choose different kinds of prices
 * Discounts for different kinds of combination
 * FileReader for output
+* Not go to the same destination as start
+* Textfile and fileWriter to update template
 
 - StartCost should be 1000
 - DestinationCost should be less
 - Thereby the cost of a travel is calculated by startCost-destinationCost
+
+304
+
+Higher cost means less price when weight
