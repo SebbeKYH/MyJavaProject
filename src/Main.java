@@ -67,6 +67,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                                int busmalmoStockholmCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoStockholmCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -108,6 +115,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                                int busmalmoVasterasCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoVasterasCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -150,6 +164,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                                int busmalmoMolndalCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoMolndalCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -191,6 +212,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                                int busmalmoKirunaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoKirunaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -232,6 +260,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                                int busmalmoSkaraCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoSkaraCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -274,6 +309,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                                int busmalmoLuleaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoLuleaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -316,6 +358,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                                int busmalmoMaglehemCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoMaglehemCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -357,6 +406,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                                int busmalmoStehagCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoStehagCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -398,6 +454,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                                int busmalmoEslovCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmalmoEslovCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -452,6 +515,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                                int busstockholmMalmoCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmMalmoCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -497,6 +567,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                                int busstockholmVasterasCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmVasterasCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -539,6 +616,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                                int busstockholmMolndalCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmMolndalCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -581,6 +665,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                                int busstockholmKirunaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmKirunaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -623,6 +714,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                                int busstockholmSkaraCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmSkaraCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -665,6 +763,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75 ,"Luleå", 350);
+                                int busstockholmLuleaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmLuleaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -707,6 +812,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                                int busstockholmMaglehemCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmMaglehemCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -749,6 +861,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                                int busstockholmStehagCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmStehagCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -791,6 +910,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                                int busstockholmEslovCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busstockholmEslovCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -845,6 +971,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                                int busvasterasMalmoCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasMalmoCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -887,6 +1020,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                                int busvasterasStockholmCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasStockholmCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -932,6 +1072,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                                int busvasterasMolndalCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasMolndalCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -973,6 +1120,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                                int busvasterasKirunaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasKirunaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1015,6 +1169,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                                int busvasterasSkaraCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasSkaraCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1057,6 +1218,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                                int busvasterasLuleaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasLuleaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1099,6 +1267,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                                int busvasterasMaglehemCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasMaglehemCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1141,6 +1316,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                                int busvasterasStehagCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasStehagCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1183,6 +1365,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                                int busvasterasEslovCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busvasterasEslovCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1237,6 +1426,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                                int busmolndalMalmoCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalMalmoCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1279,6 +1475,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                                int busmolndalStockholmCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalStockholmCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1321,6 +1524,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                                int busmolndalVasterasCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalVasterasCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1366,6 +1576,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                                int busmolndalKirunaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalKirunaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1408,6 +1625,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                                int busmolndalSkaraCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalSkaraCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1450,6 +1674,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350;
+                                int busmolndalLuleaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalLuleaCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1492,6 +1723,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                                int busmolndalMaglehemCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalMaglehemCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1534,6 +1772,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                                int busmolndalStehagCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalStehagCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
@@ -1576,6 +1821,13 @@ public class Main {
                                 System.out.println(totalCost);
                                 break;
                             case 2:
+                                System.out.println("You chose to go by bus");
+                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                                int busmolndalEslovCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int bustotalCost = (passengers.nextInt()*busmolndalEslovCost);
+                                System.out.println(bustotalCost);
                                 break;
                             case 3:
                                 break;
