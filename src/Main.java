@@ -1621,6 +1621,13 @@ public class Main {
 
                         switch (kirunaMalmotransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                                int kirunaMalmoCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaMalmoCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1656,6 +1663,13 @@ public class Main {
 
                         switch (kirunaStockholmtransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                                int kirunaStockholmCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaStockholmCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1691,6 +1705,13 @@ public class Main {
 
                         switch (kirunaVasterastransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                                int kirunaVasterasCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaVasterasCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1726,6 +1747,13 @@ public class Main {
 
                         switch (kirunaMolndaltransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                                int kirunaMolndalCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaMolndalCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1764,6 +1792,13 @@ public class Main {
 
                         switch (kirunaSkaratransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                                int kirunaSkaraCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaSkaraCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1799,6 +1834,13 @@ public class Main {
 
                         switch (kirunaLuleatransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                                int kirunaLuleaCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaLuleaCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1834,6 +1876,13 @@ public class Main {
 
                         switch (kirunaMaglehemtransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                                int kirunaMaglehemCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaMaglehemCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1869,6 +1918,13 @@ public class Main {
 
                         switch (kirunaStehagtransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                                int kirunaStehagCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaStehagCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1904,6 +1960,13 @@ public class Main {
 
                         switch (kirunaEslovtransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                                int kirunaEslovCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*kirunaEslovCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1951,6 +2014,13 @@ public class Main {
 
                         switch (skaraMalmotransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                                int skaraMalmoCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*skaraMalmoCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
@@ -1986,6 +2056,13 @@ public class Main {
 
                         switch (skaraStockholmtransportScan.nextInt()){
                             case 1:
+                                System.out.println("You chose to go by train");
+                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                                int skaraStockholmCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                                System.out.println("How many passengers are traveling?");
+                                System.out.print("> ");
+                                int totalCost = (passengers.nextInt()*skaraStockholmCost);
+                                System.out.println(totalCost);
                                 break;
                             case 2:
                                 break;
