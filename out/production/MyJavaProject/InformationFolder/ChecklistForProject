@@ -1,13 +1,14 @@
-* Choose a mode of transportation
-* Choose a starting point and save it
-* Choose a destination point and save it
-* Choose number of passengers
+* Choose a mode of transportation DONE
+* Choose a starting point and save it   DONE
+* Choose a destination point and save it    DONE
+* Choose number of passengers   DONE
 * Choose different kinds of passengers
-* Choose different kinds of prices
-* Discounts for different kinds of combination
-* FileReader for output
-* Not go to the same destination as start
+* Choose different kinds of prices  DONE
+* Discounts for different kinds of combination  SOMEWHAT
+* FileReader for output     DONE
+* Not go to the same destination as start   DONE
 * Textfile and fileWriter to update template
+* MENU back if user regrets
 
 - StartCost should be 1000
 - DestinationCost should be less
