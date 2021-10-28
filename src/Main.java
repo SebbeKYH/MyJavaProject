@@ -12,8 +12,16 @@ public class Main {
         //Time to choose starting point
         travelFrom();
 
+        makingChoices();
+    }
+
+    private static void makingChoices() {
         Scanner passengers = new Scanner (System.in);
 
+        chooseStartingPoint(passengers);
+    }
+
+    private static void chooseStartingPoint(Scanner passengers) {
         Scanner fromScan = new Scanner(System.in);
         System.out.print(">");
 
@@ -27,446 +35,7 @@ public class Main {
                 Scanner case1scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case1scan.nextInt()) {
-                    case 1:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoStockholm= startMalmo.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(malmoStockholm);
-
-                        //Read transportFile
-                        File malmoStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int malmoStockholmCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busmalmoStockholmCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoVasteras= startMalmo.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(malmoVasteras);
-
-                        // Read transportFile
-                        File malmoVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int malmoVasterasCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busmalmoVasterasCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoMolndal= startMalmo.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(malmoMolndal);
-
-                        // Read transportFile
-                        File malmoMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int malmoMolndalCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busmalmoMolndalCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoKiruna= startMalmo.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(malmoKiruna);
-
-                        // Read transportFile
-                        File malmoKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int malmoKirunaCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busmalmoKirunaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoSkara= startMalmo.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(malmoSkara);
-
-                        // Read transportFile
-                        File malmoSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int malmoSkaraCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busmalmoSkaraCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoLulea= startMalmo.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(malmoLulea);
-
-                        // Read transportFile
-                        File malmoLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int malmoLuleaCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busmalmoLuleaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoMaglehem= startMalmo.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(malmoMaglehem);
-
-                        // Read transportFile
-                        File malmoMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int malmoMaglehemCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busmalmoMaglehemCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoStehag= startMalmo.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(malmoStehag);
-
-                        // Read transportFile
-                        File malmoStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int malmoStehagCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busmalmoStehagCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String malmoEslov= startMalmo.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(malmoEslov);
-
-                        // Read transportFile
-                        File malmoEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(malmoEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner malmoEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (malmoEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int malmoEslovCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*malmoEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busmalmoEslovCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmalmoEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case1Destinations(passengers, startMalmo, case1scan);
                 break;
             case 2:
                 routeStart startStockholm = new routeStart("Stockholm", 1000);
@@ -477,452 +46,7 @@ public class Main {
                 Scanner case2scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case2scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmMalmo= startStockholm.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(stockholmMalmo);
-
-                        // Read transportFile
-                        File stockholmMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int stockholmMalmoCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busstockholmMalmoCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmVasteras= startStockholm.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(stockholmVasteras);
-
-                        // Read transportFile
-                        File stockholmVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int stockholmVasterasCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busstockholmVasterasCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmMolndal= startStockholm.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(stockholmMolndal);
-
-                        // Read transportFile
-                        File stockholmMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int stockholmMolndalCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busstockholmMolndalCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmKiruna= startStockholm.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(stockholmKiruna);
-
-                        // Read transportFile
-                        File stockholmKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int stockholmKirunaCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busstockholmKirunaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmSkara= startStockholm.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(stockholmSkara);
-
-                        // Read transportFile
-                        File stockholmSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int stockholmSkaraCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busstockholmSkaraCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmLulea= startStockholm.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(stockholmLulea);
-
-                        // Read transportFile
-                        File stockholmLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int stockholmLuleaCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75 ,"Luleå", 350);
-                                int busstockholmLuleaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmMaglehem= startStockholm.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(stockholmMaglehem);
-
-                        // Read transportFile
-                        File stockholmMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int stockholmMaglehemCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busstockholmMaglehemCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmStehag= startStockholm.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(stockholmStehag);
-
-                        // Read transportFile
-                        File stockholmStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int stockholmStehagCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busstockholmStehagCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String stockholmEslov= startStockholm.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(stockholmEslov);
-
-                        // Read transportFile
-                        File stockholmEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stockholmEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stockholmEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stockholmEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int stockholmEslovCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stockholmEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busstockholmEslovCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstockholmEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case2Destinations(passengers, startStockholm, case2scan);
                 break;
             case 3:
                 routeStart startVasteras = new routeStart("Västerås", 1000);
@@ -933,451 +57,7 @@ public class Main {
                 Scanner case3scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case3scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasMalmo= startVasteras.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(vasterasMalmo);
-
-                        // Read transportFile
-                        File vasterasMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int vasterasMalmoCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busvasterasMalmoCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasStockholm= startVasteras.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(vasterasStockholm);
-
-                        // Read transportFile
-                        File vasterasStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int vasterasStockholmCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busvasterasStockholmCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasMolndal= startVasteras.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(vasterasMolndal);
-
-                        // Read transportFile
-                        File vasterasMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int vasterasMolndalCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busvasterasMolndalCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasKiruna= startVasteras.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(vasterasKiruna);
-
-                        // Read transportFile
-                        File vasterasKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int vasterasKirunaCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busvasterasKirunaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasSkara= startVasteras.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(vasterasSkara);
-
-                        // Read transportFile
-                        File vasterasSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int vasterasSkaraCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busvasterasSkaraCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasLulea= startVasteras.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(vasterasLulea);
-
-                        // Read transportFile
-                        File vasterasLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int vasterasLuleaCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busvasterasLuleaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasMaglehem= startVasteras.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(vasterasMaglehem);
-
-                        // Read transportFile
-                        File vasterasMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int vasterasMaglehemCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busvasterasMaglehemCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasStehag= startVasteras.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(vasterasStehag);
-
-                        // Read transportFile
-                        File vasterasStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int vasterasStehagCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busvasterasStehagCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String vasterasEslov= startVasteras.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(vasterasEslov);
-
-                        // Read transportFile
-                        File vasterasEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(vasterasEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner vasterasEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (vasterasEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int vasterasEslovCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busvasterasEslovCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busvasterasEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case3Destinations(passengers, startVasteras, case3scan);
                 break;
             case 4:
                 routeStart startMolndal = new routeStart("Mölndal", 1000);
@@ -1388,452 +68,7 @@ public class Main {
                 Scanner case4scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case4scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalMalmo= startMolndal.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(molndalMalmo);
-
-                        // Read transportFile
-                        File molndalMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int molndalMalmoCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busmolndalMalmoCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalStockholm= startMolndal.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(molndalStockholm);
-
-                        // Read transportFile
-                        File molndalStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int molndalStockholmCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busmolndalStockholmCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalVasteras= startMolndal.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(molndalVasteras);
-
-                        // Read transportFile
-                        File molndalVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int vasterasMalmoCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*vasterasMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busmolndalVasterasCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalKiruna= startMolndal.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(molndalKiruna);
-
-                        // Read transportFile
-                        File molndalKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int molndalKirunaCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busmolndalKirunaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalSkara= startMolndal.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(molndalSkara);
-
-                        // Read transportFile
-                        File molndalSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int molndalSkaraCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busmolndalSkaraCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalLulea= startMolndal.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(molndalLulea);
-
-                        // Read transportFile
-                        File molndalLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int molndalLuleaCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busmolndalLuleaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalMaglehem= startMolndal.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(molndalMaglehem);
-
-                        // Read transportFile
-                        File molndalMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int molndalMaglehemCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busmolndalMaglehemCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalStehag= startMolndal.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(molndalStehag);
-
-                        // Read transportFile
-                        File molndalStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int molndalStehagCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busmolndalStehagCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String molndalEslov= startMolndal.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(molndalEslov);
-
-                        // Read transportFile
-                        File molndalEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(molndalEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner molndalEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (molndalEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int molndalEslovCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*molndalEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busmolndalEslovCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmolndalEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case4Destinations(passengers, startMolndal, case4scan);
                 break;
             case 5:
                 routeStart startKiruna = new routeStart("Kiruna", 1000);
@@ -1844,452 +79,7 @@ public class Main {
                 Scanner case5scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case5scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaMalmo= startKiruna.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(kirunaMalmo);
-
-                        // Read transportFile
-                        File kirunaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int kirunaMalmoCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int buskirunaMalmoCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaStockholm= startKiruna.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(kirunaStockholm);
-
-                        // Read transportFile
-                        File kirunaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int kirunaStockholmCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int buskirunaStockholmCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaVasteras= startKiruna.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(kirunaVasteras);
-
-                        // Read transportFile
-                        File kirunaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int kirunaVasterasCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int buskirunaVasterasCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaMolndal= startKiruna.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(kirunaMolndal);
-
-                        // Read transportFile
-                        File kirunaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int kirunaMolndalCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int buskirunaMolndalCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaSkara= startKiruna.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(kirunaSkara);
-
-                        // Read transportFile
-                        File kirunaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int kirunaSkaraCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int buskirunaSkaraCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaLulea= startKiruna.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(kirunaLulea);
-
-                        // Read transportFile
-                        File kirunaLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int kirunaLuleaCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int buskirunaLuleaCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaMaglehem= startKiruna.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(kirunaMaglehem);
-
-                        // Read transportFile
-                        File kirunaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int kirunaMaglehemCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int buskirunaMaglehemCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaStehag= startKiruna.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(kirunaStehag);
-
-                        // Read transportFile
-                        File kirunaStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int kirunaStehagCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int buskirunaStehagCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String kirunaEslov= startKiruna.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(kirunaEslov);
-
-                        // Read transportFile
-                        File kirunaEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(kirunaEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner kirunaEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (kirunaEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int kirunaEslovCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*kirunaEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int buskirunaEslovCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buskirunaEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case5Destinations(passengers, startKiruna, case5scan);
                 break;
             case 6:
                 routeStart startSkara = new routeStart("Skara", 1000);
@@ -2300,452 +90,7 @@ public class Main {
                 Scanner case6scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case6scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraMalmo= startSkara.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(skaraMalmo);
-
-                        // Read transportFile
-                        File skaraMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int skaraMalmoCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busskaraMalmoCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraStockholm= startSkara.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(skaraStockholm);
-
-                        // Read transportFile
-                        File skaraStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int skaraStockholmCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busskaraStockholmCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraVasteras= startSkara.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(skaraVasteras);
-
-                        // Read transportFile
-                        File skaraVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int skaraVasterasCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busskaraVasterasCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraMolndal= startSkara.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(skaraMolndal);
-
-                        // Read transportFile
-                        File skaraMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int skaraMolndalCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busskaraMolndalCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraKiruna= startSkara.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(skaraKiruna);
-
-                        // Read transportFile
-                        File skaraKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int skaraKirunaCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busskaraKirunaCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraLulea= startSkara.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(skaraLulea);
-
-                        // Read transportFile
-                        File skaraLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int skaraLuleaCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busskaraLuleaCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraMaglehem= startSkara.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(skaraMaglehem);
-
-                        // Read transportFile
-                        File skaraMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int skaraMaglehemCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busskaraMaglehemCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraStehag= startSkara.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(skaraStehag);
-
-                        // Read transportFile
-                        File skaraStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int skaraStehagCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busskaraStehagCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String skaraEslov= startSkara.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(skaraEslov);
-
-                        // Read transportFile
-                        File skaraEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(skaraEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner skaraEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (skaraEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int skaraEslovCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*skaraEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busskaraEslovCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busskaraEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case6Destinations(passengers, startSkara, case6scan);
                 break;
             case 7:
                 routeStart startLulea = new routeStart("Luleå", 1000);
@@ -2756,447 +101,7 @@ public class Main {
                 Scanner case7scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case7scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaMalmo= startLulea.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(luleaMalmo);
-
-                        // Read transportFile
-                        File luleaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int luleaMalmoCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busluleaMalmoCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaStockholm= startLulea.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(luleaStockholm);
-
-                        // Read transportFile
-                        File luleaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int luleaStockholmCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busluleaStockholmCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaVasteras= startLulea.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(luleaVasteras);
-
-                        // Read transportFile
-                        File luleaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int luleaVasterasCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busluleaVasterasCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaMolndal= startLulea.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(luleaMolndal);
-
-                        // Read transportFile
-                        File luleaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int luleaMolndalCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busluleaMolndalCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaKiruna= startLulea.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(luleaKiruna);
-
-                        // Read transportFile
-                        File luleaKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int luleaKirunaCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busluleaKirunaCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaSkara= startLulea.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(luleaSkara);
-
-                        // Read transportFile
-                        File luleaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int luleaSkaraCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busluleaSkaraCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaMaglehem= startLulea.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(luleaMaglehem);
-
-                        // Read transportFile
-                        File luleaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int luleaMaglehemCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busluleaMaglehemCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaStehag= startLulea.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(luleaStehag);
-
-                        // Read transportFile
-                        File luleaStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int luleaStehagCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busluleaStehagCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String luleaEslov= startLulea.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(luleaEslov);
-
-                        // Read transportFile
-                        File luleaEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(luleaEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner luleaEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (luleaEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int luleaEslovCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*luleaEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busluleaEslovCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busluleaEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case7Destinations(passengers, startLulea, case7scan);
                 break;
             case 8:
                 routeStart startMaglehem = new routeStart("Maglehem", 1000);
@@ -3207,451 +112,7 @@ public class Main {
                 Scanner case8scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case8scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemMalmo= startMaglehem.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(maglehemMalmo);
-
-                        // Read transportFile
-                        File maglehemMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int maglehemMalmoCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busmaglehemMalmoCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemStockholm= startMaglehem.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(maglehemStockholm);
-
-                        // Read transportFile
-                        File maglehemStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int maglehemStockholmCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busmaglehemStockholmCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemVasteras= startMaglehem.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(maglehemVasteras);
-
-                        // Read transportFile
-                        File maglehemVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int maglehemVasterasCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busmaglehemVasterasCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemMolndal= startMaglehem.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(maglehemMolndal);
-
-                        // Read transportFile
-                        File maglehemMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int maglehemMolndalCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busmaglehemMolndalCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemKiruna= startMaglehem.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(maglehemKiruna);
-
-                        // Read transportFile
-                        File maglehemKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int maglehemKirunaCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busmaglehemKirunaCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemSkara= startMaglehem.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(maglehemSkara);
-
-                        // Read transportFile
-                        File maglehemSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int maglehemSkaraCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busmaglehemSkaraCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemLulea= startMaglehem.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(maglehemLulea);
-
-                        // Read transportFile
-                        File maglehemLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int maglehemLuleaCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busmaglehemLuleaCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemStehag= startMaglehem.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(maglehemStehag);
-
-                        // Read transportFile
-                        File maglehemStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int maglehemStehagCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int busmaglehemStehagCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String maglehemEslov= startMaglehem.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(maglehemEslov);
-
-                        // Read transportFile
-                        File maglehemEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(maglehemEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner maglehemEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (maglehemEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int maglehemEslovCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*maglehemEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busmaglehemEslovCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busmaglehemEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case8Destinations(passengers, startMaglehem, case8scan);
                 break;
             case 9:
                 routeStart startStehag = new routeStart("Stehag", 1000);
@@ -3662,451 +123,7 @@ public class Main {
                 Scanner case9scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case9scan.nextInt()) {
-                    case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagMalmo= startStehag.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(stehagMalmo);
-
-                        // Read transportFile
-                        File stehagMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int stehagMalmoCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int busstehagMalmoCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagStockholm= startStehag.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(stehagStockholm);
-
-                        // Read transportFile
-                        File stehagStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int stehagStockholmCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int busstehagStockholmCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagVasteras= startStehag.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(stehagVasteras);
-
-                        // Read transportFile
-                        File stehagVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int stehagVasterasCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int busstehagVasterasCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagMolndal= startStehag.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(stehagMolndal);
-
-                        // Read transportFile
-                        File stehagMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int stehagMolndalCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int busstehagMolndalCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagKiruna= startStehag.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(stehagKiruna);
-
-                        // Read transportFile
-                        File stehagKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int stehagKirunaCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int busstehagKirunaCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagSkara= startStehag.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(stehagSkara);
-
-                        // Read transportFile
-                        File stehagSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int stehagSkaraCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int busstehagSkaraCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagLulea= startStehag.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(stehagLulea);
-
-                        // Read transportFile
-                        File stehagLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int stehagLuleaCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int busstehagLuleaCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagMaglehem= startStehag.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(stehagMaglehem);
-
-                        // Read transportFile
-                        File stehagMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int stehagMaglehemCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int busstehagMaglehemCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        System.out.println("You cant have the same destination as starting point.");
-                        break;
-                    case 10:
-                        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
-                        System.out.println("You chose to travel to "
-                                + destinationEslov.routeDestination + ".");
-                        System.out.println("\n");
-                        String stehagEslov= startStehag.routeStart +"----->"
-                                +destinationEslov.routeDestination;
-                        System.out.println(stehagEslov);
-
-                        // Read transportFile
-                        File stehagEslovFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(stehagEslovFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner stehagEslovtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (stehagEslovtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
-                                int stehagEslovCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*stehagEslovCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
-                                int busstehagEslovCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*busstehagEslovCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                }
+                case9Destinations(passengers, startStehag, case9scan);
                 break;
             case 10:
                 routeStart startEslov = new routeStart("Eslöv", 1000);
@@ -4117,452 +134,4600 @@ public class Main {
                 Scanner case10scan = new Scanner(System.in);
                 System.out.print(">");
 
-                switch (case10scan.nextInt()) {
+                case10Destinations(passengers, startEslov, case10scan);
+                break;
+        }
+    }
+
+    private static void case10Destinations(Scanner passengers, routeStart startEslov, Scanner case10scan) {
+        switch (case10scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String eslovMalmo= startEslov.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(eslovMalmo);
+
+                // Read transportFile
+                File eslovMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovMalmotransportScan.nextInt()){
                     case 1:
-                        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
-                        System.out.println("You chose to travel to "
-                                + destinationMalmo.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovMalmo= startEslov.routeStart +"----->"
-                                +destinationMalmo.routeDestination;
-                        System.out.println(eslovMalmo);
-
-                        // Read transportFile
-                        File eslovMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovMalmoFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovMalmotransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovMalmotransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
-                                int eslovMalmoCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovMalmoCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
-                                int buseslovMalmoCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovMalmoCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int eslovMalmoCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovMalmoCost);
+                        System.out.println(totalCost);
                         break;
                     case 2:
-                        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-                        System.out.println("You chose to travel to "
-                                + destinationStockholm.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovStockholm= startEslov.routeStart +"----->"
-                                +destinationStockholm.routeDestination;
-                        System.out.println(eslovStockholm);
-
-                        // Read transportFile
-                        File eslovStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovStockholmFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovStockholmtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovStockholmtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                                int eslovStockholmCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovStockholmCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                                int buseslovStockholmCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovStockholmCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int buseslovMalmoCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovMalmoCost);
+                        System.out.println(bustotalCost);
                         break;
                     case 3:
-                        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
-                        System.out.println("You chose to travel to "
-                                + destinationVasteras.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovVasteras= startEslov.routeStart +"----->"
-                                +destinationVasteras.routeDestination;
-                        System.out.println(eslovVasteras);
-
-                        // Read transportFile
-                        File eslovVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovVasterasFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovVasterastransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovVasterastransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
-                                int eslovVasterasCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovVasterasCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
-                                int buseslovVasterasCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovVasterasCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 4:
-                        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
-                        System.out.println("You chose to travel to "
-                                + destinationMolndal.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovMolndal= startEslov.routeStart +"----->"
-                                +destinationMolndal.routeDestination;
-                        System.out.println(eslovMolndal);
-
-                        // Read transportFile
-                        File eslovMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovMolndalFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovMolndaltransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovMolndaltransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
-                                int eslovMolndalCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovMolndalCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
-                                int buseslovMolndalCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovMolndalCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 5:
-                        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
-                        System.out.println("You chose to travel to "
-                                + destinationKiruna.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovKiruna= startEslov.routeStart +"----->"
-                                +destinationKiruna.routeDestination;
-                        System.out.println(eslovKiruna);
-
-                        // Read transportFile
-                        File eslovKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovKirunaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovKirunatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovKirunatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
-                                int eslovKirunaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovKirunaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
-                                int buseslovKirunaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovKirunaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 6:
-                        routeDestination destinationSkara = new routeDestination("Skara", 300);
-                        System.out.println("You chose to travel to "
-                                + destinationSkara.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovSkara= startEslov.routeStart +"----->"
-                                +destinationSkara.routeDestination;
-                        System.out.println(eslovSkara);
-
-                        // Read transportFile
-                        File eslovSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovSkaraFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovSkaratransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovSkaratransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Skara", 300);
-                                int eslovSkaraCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovSkaraCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
-                                int buseslovSkaraCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovSkaraCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 7:
-                        routeDestination destinationLulea = new routeDestination("Luleå", 350);
-                        System.out.println("You chose to travel to "
-                                + destinationLulea.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovLulea= startEslov.routeStart +"----->"
-                                +destinationLulea.routeDestination;
-                        System.out.println(eslovLulea);
-
-                        // Read transportFile
-                        File eslovLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovLuleaFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovLuleatransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovLuleatransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
-                                int eslovLuleaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovLuleaCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
-                                int buseslovLuleaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovLuleaCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 8:
-                        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
-                        System.out.println("You chose to travel to "
-                                + destinationMaglehem.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovMaglehem= startEslov.routeStart +"----->"
-                                +destinationMaglehem.routeDestination;
-                        System.out.println(eslovMaglehem);
-
-                        // Read transportFile
-                        File eslovMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovMaglehemFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovMaglehemtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovMaglehemtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
-                                int eslovMaglehemCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovMaglehemCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
-                                int buseslovMaglehemCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovMaglehemCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 9:
-                        routeDestination destinationStehag = new routeDestination("Stehag", 450);
-                        System.out.println("You chose to travel to "
-                                + destinationStehag.routeDestination + ".");
-                        System.out.println("\n");
-                        String eslovStehag= startEslov.routeStart +"----->"
-                                +destinationStehag.routeDestination;
-                        System.out.println(eslovStehag);
-
-                        // Read transportFile
-                        File eslovStehagFile = new File("./src/InformationFolder/transportAlternatives");
-                        try {
-                            Scanner transportScanner = new Scanner(eslovStehagFile);
-                            while (transportScanner.hasNextLine()) {
-                                System.out.println(transportScanner.nextLine());
-                            }
-                        }
-                        catch(FileNotFoundException e){
-                            System.out.println("Trouble reading file");
-                        }
-
-                        //Choose transportation
-                        System.out.println("Choose transportation alternative: ");
-                        Scanner eslovStehagtransportScan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        switch (eslovStehagtransportScan.nextInt()){
-                            case 1:
-                                System.out.println("You chose to go by train");
-                                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
-                                int eslovStehagCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int totalCost = (passengers.nextInt()*eslovStehagCost);
-                                System.out.println(totalCost);
-                                break;
-                            case 2:
-                                System.out.println("You chose to go by bus");
-                                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
-                                int buseslovStehagCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
-                                System.out.println("How many passengers are traveling?");
-                                System.out.print("> ");
-                                int bustotalCost = (passengers.nextInt()*buseslovStehagCost);
-                                System.out.println(bustotalCost);
-                                break;
-                            case 3:
-                                break;
-                        }
-                        break;
-                    case 10:
-                        System.out.println("You cant have the same destination as starting point.");
                         break;
                 }
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String eslovStockholm= startEslov.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(eslovStockholm);
+
+                // Read transportFile
+                File eslovStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int eslovStockholmCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int buseslovStockholmCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String eslovVasteras= startEslov.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(eslovVasteras);
+
+                // Read transportFile
+                File eslovVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int eslovVasterasCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int buseslovVasterasCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String eslovMolndal= startEslov.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(eslovMolndal);
+
+                // Read transportFile
+                File eslovMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int eslovMolndalCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int buseslovMolndalCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String eslovKiruna= startEslov.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(eslovKiruna);
+
+                // Read transportFile
+                File eslovKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int eslovKirunaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int buseslovKirunaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String eslovSkara= startEslov.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(eslovSkara);
+
+                // Read transportFile
+                File eslovSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int eslovSkaraCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int buseslovSkaraCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String eslovLulea= startEslov.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(eslovLulea);
+
+                // Read transportFile
+                File eslovLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int eslovLuleaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int buseslovLuleaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String eslovMaglehem= startEslov.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(eslovMaglehem);
+
+                // Read transportFile
+                File eslovMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int eslovMaglehemCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int buseslovMaglehemCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String eslovStehag= startEslov.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(eslovStehag);
+
+                // Read transportFile
+                File eslovStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(eslovStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner eslovStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (eslovStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int eslovStehagCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*eslovStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int buseslovStehagCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buseslovStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+        }
+    }
+
+    private static void case9Destinations(Scanner passengers, routeStart startStehag, Scanner case9scan) {
+        switch (case9scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String stehagMalmo= startStehag.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(stehagMalmo);
+
+                // Read transportFile
+                File stehagMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagMalmotransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int stehagMalmoCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int busstehagMalmoCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagMalmoCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String stehagStockholm= startStehag.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(stehagStockholm);
+
+                // Read transportFile
+                File stehagStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int stehagStockholmCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int busstehagStockholmCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String stehagVasteras= startStehag.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(stehagVasteras);
+
+                // Read transportFile
+                File stehagVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int stehagVasterasCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int busstehagVasterasCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String stehagMolndal= startStehag.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(stehagMolndal);
+
+                // Read transportFile
+                File stehagMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int stehagMolndalCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int busstehagMolndalCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String stehagKiruna= startStehag.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(stehagKiruna);
+
+                // Read transportFile
+                File stehagKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int stehagKirunaCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int busstehagKirunaCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String stehagSkara= startStehag.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(stehagSkara);
+
+                // Read transportFile
+                File stehagSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int stehagSkaraCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int busstehagSkaraCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String stehagLulea= startStehag.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(stehagLulea);
+
+                // Read transportFile
+                File stehagLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int stehagLuleaCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int busstehagLuleaCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String stehagMaglehem= startStehag.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(stehagMaglehem);
+
+                // Read transportFile
+                File stehagMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int stehagMaglehemCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int busstehagMaglehemCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String stehagEslov= startStehag.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(stehagEslov);
+
+                // Read transportFile
+                File stehagEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(stehagEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner stehagEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (stehagEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int stehagEslovCost=(startStehag.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*stehagEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int busstehagEslovCost=(startStehag.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busstehagEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case8Destinations(Scanner passengers, routeStart startMaglehem, Scanner case8scan) {
+        switch (case8scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemMalmo= startMaglehem.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(maglehemMalmo);
+
+                // Read transportFile
+                File maglehemMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemMalmotransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int maglehemMalmoCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int busmaglehemMalmoCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemMalmoCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemStockholm= startMaglehem.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(maglehemStockholm);
+
+                // Read transportFile
+                File maglehemStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int maglehemStockholmCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int busmaglehemStockholmCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemVasteras= startMaglehem.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(maglehemVasteras);
+
+                // Read transportFile
+                File maglehemVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int maglehemVasterasCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int busmaglehemVasterasCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemMolndal= startMaglehem.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(maglehemMolndal);
+
+                // Read transportFile
+                File maglehemMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int maglehemMolndalCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int busmaglehemMolndalCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemKiruna= startMaglehem.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(maglehemKiruna);
+
+                // Read transportFile
+                File maglehemKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int maglehemKirunaCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int busmaglehemKirunaCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemSkara= startMaglehem.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(maglehemSkara);
+
+                // Read transportFile
+                File maglehemSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int maglehemSkaraCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int busmaglehemSkaraCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemLulea= startMaglehem.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(maglehemLulea);
+
+                // Read transportFile
+                File maglehemLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int maglehemLuleaCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int busmaglehemLuleaCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemStehag= startMaglehem.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(maglehemStehag);
+
+                // Read transportFile
+                File maglehemStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int maglehemStehagCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int busmaglehemStehagCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String maglehemEslov= startMaglehem.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(maglehemEslov);
+
+                // Read transportFile
+                File maglehemEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(maglehemEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner maglehemEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (maglehemEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int maglehemEslovCost=(startMaglehem.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*maglehemEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int busmaglehemEslovCost=(startMaglehem.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmaglehemEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case7Destinations(Scanner passengers, routeStart startLulea, Scanner case7scan) {
+        switch (case7scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String luleaMalmo= startLulea.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(luleaMalmo);
+
+                // Read transportFile
+                File luleaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaMalmotransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int luleaMalmoCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int busluleaMalmoCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaMalmoCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String luleaStockholm= startLulea.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(luleaStockholm);
+
+                // Read transportFile
+                File luleaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int luleaStockholmCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int busluleaStockholmCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String luleaVasteras= startLulea.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(luleaVasteras);
+
+                // Read transportFile
+                File luleaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int luleaVasterasCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int busluleaVasterasCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String luleaMolndal= startLulea.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(luleaMolndal);
+
+                // Read transportFile
+                File luleaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int luleaMolndalCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int busluleaMolndalCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String luleaKiruna= startLulea.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(luleaKiruna);
+
+                // Read transportFile
+                File luleaKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int luleaKirunaCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int busluleaKirunaCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String luleaSkara= startLulea.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(luleaSkara);
+
+                // Read transportFile
+                File luleaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int luleaSkaraCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int busluleaSkaraCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String luleaMaglehem= startLulea.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(luleaMaglehem);
+
+                // Read transportFile
+                File luleaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int luleaMaglehemCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int busluleaMaglehemCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String luleaStehag= startLulea.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(luleaStehag);
+
+                // Read transportFile
+                File luleaStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int luleaStehagCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int busluleaStehagCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String luleaEslov= startLulea.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(luleaEslov);
+
+                // Read transportFile
+                File luleaEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(luleaEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner luleaEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (luleaEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int luleaEslovCost=(startLulea.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*luleaEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int busluleaEslovCost=(startLulea.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busluleaEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case6Destinations(Scanner passengers, routeStart startSkara, Scanner case6scan) {
+        switch (case6scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String skaraMalmo= startSkara.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(skaraMalmo);
+
+                // Read transportFile
+                File skaraMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraMalmotransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int skaraMalmoCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int busskaraMalmoCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraMalmoCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String skaraStockholm= startSkara.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(skaraStockholm);
+
+                // Read transportFile
+                File skaraStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int skaraStockholmCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int busskaraStockholmCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String skaraVasteras= startSkara.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(skaraVasteras);
+
+                // Read transportFile
+                File skaraVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int skaraVasterasCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int busskaraVasterasCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String skaraMolndal= startSkara.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(skaraMolndal);
+
+                // Read transportFile
+                File skaraMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int skaraMolndalCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int busskaraMolndalCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String skaraKiruna= startSkara.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(skaraKiruna);
+
+                // Read transportFile
+                File skaraKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int skaraKirunaCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int busskaraKirunaCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String skaraLulea= startSkara.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(skaraLulea);
+
+                // Read transportFile
+                File skaraLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int skaraLuleaCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int busskaraLuleaCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String skaraMaglehem= startSkara.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(skaraMaglehem);
+
+                // Read transportFile
+                File skaraMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int skaraMaglehemCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int busskaraMaglehemCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String skaraStehag= startSkara.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(skaraStehag);
+
+                // Read transportFile
+                File skaraStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int skaraStehagCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int busskaraStehagCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String skaraEslov= startSkara.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(skaraEslov);
+
+                // Read transportFile
+                File skaraEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(skaraEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner skaraEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (skaraEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int skaraEslovCost=(startSkara.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*skaraEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int busskaraEslovCost=(startSkara.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busskaraEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case5Destinations(Scanner passengers, routeStart startKiruna, Scanner case5scan) {
+        switch (case5scan.nextInt()) {
+            case 1:
+                routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+                System.out.println("You chose to travel to "
+                        + destinationMalmo.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaMalmo= startKiruna.routeStart +"----->"
+                        +destinationMalmo.routeDestination;
+                System.out.println(kirunaMalmo);
+
+                // Read transportFile
+                File kirunaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaMalmoFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaMalmotransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaMalmotransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                        int kirunaMalmoCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                        int buskirunaMalmoCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaMalmoCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 2:
+                routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+                System.out.println("You chose to travel to "
+                        + destinationStockholm.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaStockholm= startKiruna.routeStart +"----->"
+                        +destinationStockholm.routeDestination;
+                System.out.println(kirunaStockholm);
+
+                // Read transportFile
+                File kirunaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaStockholmFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaStockholmtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaStockholmtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                        int kirunaStockholmCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaStockholmCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                        int buskirunaStockholmCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaStockholmCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaVasteras= startKiruna.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(kirunaVasteras);
+
+                // Read transportFile
+                File kirunaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int kirunaVasterasCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaVasterasCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int buskirunaVasterasCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+                System.out.println("You chose to travel to "
+                        + destinationMolndal.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaMolndal= startKiruna.routeStart +"----->"
+                        +destinationMolndal.routeDestination;
+                System.out.println(kirunaMolndal);
+
+                // Read transportFile
+                File kirunaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaMolndalFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaMolndaltransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaMolndaltransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                        int kirunaMolndalCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaMolndalCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                        int buskirunaMolndalCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaMolndalCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 5:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaSkara= startKiruna.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(kirunaSkara);
+
+                // Read transportFile
+                File kirunaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int kirunaSkaraCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int buskirunaSkaraCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaLulea= startKiruna.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(kirunaLulea);
+
+                // Read transportFile
+                File kirunaLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int kirunaLuleaCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int buskirunaLuleaCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaMaglehem= startKiruna.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(kirunaMaglehem);
+
+                // Read transportFile
+                File kirunaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int kirunaMaglehemCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int buskirunaMaglehemCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaStehag= startKiruna.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(kirunaStehag);
+
+                // Read transportFile
+                File kirunaStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int kirunaStehagCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int buskirunaStehagCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String kirunaEslov= startKiruna.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(kirunaEslov);
+
+                // Read transportFile
+                File kirunaEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(kirunaEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner kirunaEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (kirunaEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int kirunaEslovCost=(startKiruna.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*kirunaEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int buskirunaEslovCost=(startKiruna.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*buskirunaEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case4Destinations(Scanner passengers, routeStart startMolndal, Scanner case4scan) {
+        switch (case4scan.nextInt()) {
+            case 1:
+                case4Destination1(passengers, startMolndal);
+                break;
+            case 2:
+                case4Destination2(passengers, startMolndal);
+                break;
+            case 3:
+                routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+                System.out.println("You chose to travel to "
+                        + destinationVasteras.routeDestination + ".");
+                System.out.println("\n");
+                String molndalVasteras= startMolndal.routeStart +"----->"
+                        +destinationVasteras.routeDestination;
+                System.out.println(molndalVasteras);
+
+                // Read transportFile
+                File molndalVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalVasterasFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalVasterastransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalVasterastransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                        int vasterasMalmoCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*vasterasMalmoCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                        int busmolndalVasterasCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalVasterasCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 4:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 5:
+                routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+                System.out.println("You chose to travel to "
+                        + destinationKiruna.routeDestination + ".");
+                System.out.println("\n");
+                String molndalKiruna= startMolndal.routeStart +"----->"
+                        +destinationKiruna.routeDestination;
+                System.out.println(molndalKiruna);
+
+                // Read transportFile
+                File molndalKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalKirunaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalKirunatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalKirunatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                        int molndalKirunaCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalKirunaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                        int busmolndalKirunaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalKirunaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 6:
+                routeDestination destinationSkara = new routeDestination("Skara", 300);
+                System.out.println("You chose to travel to "
+                        + destinationSkara.routeDestination + ".");
+                System.out.println("\n");
+                String molndalSkara= startMolndal.routeStart +"----->"
+                        +destinationSkara.routeDestination;
+                System.out.println(molndalSkara);
+
+                // Read transportFile
+                File molndalSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalSkaraFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalSkaratransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalSkaratransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                        int molndalSkaraCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalSkaraCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                        int busmolndalSkaraCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalSkaraCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 7:
+                routeDestination destinationLulea = new routeDestination("Luleå", 350);
+                System.out.println("You chose to travel to "
+                        + destinationLulea.routeDestination + ".");
+                System.out.println("\n");
+                String molndalLulea= startMolndal.routeStart +"----->"
+                        +destinationLulea.routeDestination;
+                System.out.println(molndalLulea);
+
+                // Read transportFile
+                File molndalLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalLuleaFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalLuleatransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalLuleatransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                        int molndalLuleaCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalLuleaCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                        int busmolndalLuleaCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalLuleaCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 8:
+                routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+                System.out.println("You chose to travel to "
+                        + destinationMaglehem.routeDestination + ".");
+                System.out.println("\n");
+                String molndalMaglehem= startMolndal.routeStart +"----->"
+                        +destinationMaglehem.routeDestination;
+                System.out.println(molndalMaglehem);
+
+                // Read transportFile
+                File molndalMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalMaglehemFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalMaglehemtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalMaglehemtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                        int molndalMaglehemCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalMaglehemCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                        int busmolndalMaglehemCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalMaglehemCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 9:
+                routeDestination destinationStehag = new routeDestination("Stehag", 450);
+                System.out.println("You chose to travel to "
+                        + destinationStehag.routeDestination + ".");
+                System.out.println("\n");
+                String molndalStehag= startMolndal.routeStart +"----->"
+                        +destinationStehag.routeDestination;
+                System.out.println(molndalStehag);
+
+                // Read transportFile
+                File molndalStehagFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalStehagFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalStehagtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalStehagtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                        int molndalStehagCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalStehagCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                        int busmolndalStehagCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalStehagCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+            case 10:
+                routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+                System.out.println("You chose to travel to "
+                        + destinationEslov.routeDestination + ".");
+                System.out.println("\n");
+                String molndalEslov= startMolndal.routeStart +"----->"
+                        +destinationEslov.routeDestination;
+                System.out.println(molndalEslov);
+
+                // Read transportFile
+                File molndalEslovFile = new File("./src/InformationFolder/transportAlternatives");
+                try {
+                    Scanner transportScanner = new Scanner(molndalEslovFile);
+                    while (transportScanner.hasNextLine()) {
+                        System.out.println(transportScanner.nextLine());
+                    }
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("Trouble reading file");
+                }
+
+                //Choose transportation
+                System.out.println("Choose transportation alternative: ");
+                Scanner molndalEslovtransportScan = new Scanner(System.in);
+                System.out.print(">");
+
+                switch (molndalEslovtransportScan.nextInt()){
+                    case 1:
+                        System.out.println("You chose to go by train");
+                        routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                        int molndalEslovCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int totalCost = (passengers.nextInt()*molndalEslovCost);
+                        System.out.println(totalCost);
+                        break;
+                    case 2:
+                        System.out.println("You chose to go by bus");
+                        routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                        int busmolndalEslovCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                        System.out.println("How many passengers are traveling?");
+                        System.out.print("> ");
+                        int bustotalCost = (passengers.nextInt()*busmolndalEslovCost);
+                        System.out.println(bustotalCost);
+                        break;
+                    case 3:
+                        break;
+                }
+                break;
+        }
+    }
+
+    private static void case4Destination2(Scanner passengers, routeStart startMolndal) {
+        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+        System.out.println("You chose to travel to "
+                + destinationStockholm.routeDestination + ".");
+        System.out.println("\n");
+        String molndalStockholm= startMolndal.routeStart +"----->"
+                +destinationStockholm.routeDestination;
+        System.out.println(molndalStockholm);
+
+        // Read transportFile
+        File molndalStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(molndalStockholmFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner molndalStockholmtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (molndalStockholmtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                int molndalStockholmCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*molndalStockholmCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                int busmolndalStockholmCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmolndalStockholmCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case4Destination1(Scanner passengers, routeStart startMolndal) {
+        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+        System.out.println("You chose to travel to "
+                + destinationMalmo.routeDestination + ".");
+        System.out.println("\n");
+        String molndalMalmo= startMolndal.routeStart +"----->"
+                +destinationMalmo.routeDestination;
+        System.out.println(molndalMalmo);
+
+        // Read transportFile
+        File molndalMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(molndalMalmoFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner molndalMalmotransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (molndalMalmotransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                int molndalMalmoCost=(startMolndal.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*molndalMalmoCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                int busmolndalMalmoCost=(startMolndal.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmolndalMalmoCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destinations(Scanner passengers, routeStart startVasteras, Scanner case3scan) {
+        switch (case3scan.nextInt()) {
+            case 1:
+                case3Destination1(passengers, startVasteras);
+                break;
+            case 2:
+                case3Destination2(passengers, startVasteras);
+                break;
+            case 3:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 4:
+                case3Destination4(passengers, startVasteras);
+                break;
+            case 5:
+                case3Destination5(passengers, startVasteras);
+                break;
+            case 6:
+                case3Destination6(passengers, startVasteras);
+                break;
+            case 7:
+                case3Destination7(passengers, startVasteras);
+                break;
+            case 8:
+                case3Destination8(passengers, startVasteras);
+                break;
+            case 9:
+                case3Destination9(passengers, startVasteras);
+                break;
+            case 10:
+                case3Destination10(passengers, startVasteras);
+                break;
+        }
+    }
+
+    private static void case3Destination10(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+        System.out.println("You chose to travel to "
+                + destinationEslov.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasEslov= startVasteras.routeStart +"----->"
+                +destinationEslov.routeDestination;
+        System.out.println(vasterasEslov);
+
+        // Read transportFile
+        File vasterasEslovFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasEslovFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasEslovtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasEslovtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                int vasterasEslovCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasEslovCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                int busvasterasEslovCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasEslovCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination9(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+        System.out.println("You chose to travel to "
+                + destinationStehag.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasStehag= startVasteras.routeStart +"----->"
+                +destinationStehag.routeDestination;
+        System.out.println(vasterasStehag);
+
+        // Read transportFile
+        File vasterasStehagFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasStehagFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasStehagtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasStehagtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                int vasterasStehagCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasStehagCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                int busvasterasStehagCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasStehagCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination8(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+        System.out.println("You chose to travel to "
+                + destinationMaglehem.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasMaglehem= startVasteras.routeStart +"----->"
+                +destinationMaglehem.routeDestination;
+        System.out.println(vasterasMaglehem);
+
+        // Read transportFile
+        File vasterasMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasMaglehemFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasMaglehemtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasMaglehemtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                int vasterasMaglehemCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasMaglehemCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                int busvasterasMaglehemCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasMaglehemCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination7(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+        System.out.println("You chose to travel to "
+                + destinationLulea.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasLulea= startVasteras.routeStart +"----->"
+                +destinationLulea.routeDestination;
+        System.out.println(vasterasLulea);
+
+        // Read transportFile
+        File vasterasLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasLuleaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasLuleatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasLuleatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                int vasterasLuleaCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasLuleaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                int busvasterasLuleaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasLuleaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination6(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationSkara = new routeDestination("Skara", 300);
+        System.out.println("You chose to travel to "
+                + destinationSkara.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasSkara= startVasteras.routeStart +"----->"
+                +destinationSkara.routeDestination;
+        System.out.println(vasterasSkara);
+
+        // Read transportFile
+        File vasterasSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasSkaraFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasSkaratransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasSkaratransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                int vasterasSkaraCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasSkaraCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                int busvasterasSkaraCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasSkaraCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination5(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+        System.out.println("You chose to travel to "
+                + destinationKiruna.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasKiruna= startVasteras.routeStart +"----->"
+                +destinationKiruna.routeDestination;
+        System.out.println(vasterasKiruna);
+
+        // Read transportFile
+        File vasterasKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasKirunaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasKirunatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasKirunatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                int vasterasKirunaCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasKirunaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                int busvasterasKirunaCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasKirunaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination4(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+        System.out.println("You chose to travel to "
+                + destinationMolndal.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasMolndal= startVasteras.routeStart +"----->"
+                +destinationMolndal.routeDestination;
+        System.out.println(vasterasMolndal);
+
+        // Read transportFile
+        File vasterasMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasMolndalFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasMolndaltransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasMolndaltransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                int vasterasMolndalCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasMolndalCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                int busvasterasMolndalCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasMolndalCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination2(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+        System.out.println("You chose to travel to "
+                + destinationStockholm.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasStockholm= startVasteras.routeStart +"----->"
+                +destinationStockholm.routeDestination;
+        System.out.println(vasterasStockholm);
+
+        // Read transportFile
+        File vasterasStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasStockholmFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasStockholmtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasStockholmtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                int vasterasStockholmCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasStockholmCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                int busvasterasStockholmCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasStockholmCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case3Destination1(Scanner passengers, routeStart startVasteras) {
+        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+        System.out.println("You chose to travel to "
+                + destinationMalmo.routeDestination + ".");
+        System.out.println("\n");
+        String vasterasMalmo= startVasteras.routeStart +"----->"
+                +destinationMalmo.routeDestination;
+        System.out.println(vasterasMalmo);
+
+        // Read transportFile
+        File vasterasMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(vasterasMalmoFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner vasterasMalmotransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (vasterasMalmotransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                int vasterasMalmoCost=(startVasteras.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*vasterasMalmoCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                int busvasterasMalmoCost=(startVasteras.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busvasterasMalmoCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destinations(Scanner passengers, routeStart startStockholm, Scanner case2scan) {
+        switch (case2scan.nextInt()) {
+            case 1:
+                case2Destination1(passengers, startStockholm);
+                break;
+            case 2:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 3:
+                case2Destination3(passengers, startStockholm);
+                break;
+            case 4:
+                case2Destination4(passengers, startStockholm);
+                break;
+            case 5:
+                case2Destination5(passengers, startStockholm);
+                break;
+            case 6:
+                case2Destination6(passengers, startStockholm);
+                break;
+            case 7:
+                case2Destination7(passengers, startStockholm);
+                break;
+            case 8:
+                case2Destination8(passengers, startStockholm);
+                break;
+            case 9:
+                case2Destination9(passengers, startStockholm);
+                break;
+            case 10:
+                case2Destination10(passengers, startStockholm);
+                break;
+        }
+    }
+
+    private static void case2Destination10(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+        System.out.println("You chose to travel to "
+                + destinationEslov.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmEslov= startStockholm.routeStart +"----->"
+                +destinationEslov.routeDestination;
+        System.out.println(stockholmEslov);
+
+        // Read transportFile
+        File stockholmEslovFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmEslovFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmEslovtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmEslovtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                int stockholmEslovCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmEslovCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                int busstockholmEslovCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmEslovCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination9(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+        System.out.println("You chose to travel to "
+                + destinationStehag.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmStehag= startStockholm.routeStart +"----->"
+                +destinationStehag.routeDestination;
+        System.out.println(stockholmStehag);
+
+        // Read transportFile
+        File stockholmStehagFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmStehagFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmStehagtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmStehagtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                int stockholmStehagCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmStehagCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                int busstockholmStehagCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmStehagCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination8(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+        System.out.println("You chose to travel to "
+                + destinationMaglehem.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmMaglehem= startStockholm.routeStart +"----->"
+                +destinationMaglehem.routeDestination;
+        System.out.println(stockholmMaglehem);
+
+        // Read transportFile
+        File stockholmMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmMaglehemFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmMaglehemtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmMaglehemtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                int stockholmMaglehemCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmMaglehemCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                int busstockholmMaglehemCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmMaglehemCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination7(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+        System.out.println("You chose to travel to "
+                + destinationLulea.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmLulea= startStockholm.routeStart +"----->"
+                +destinationLulea.routeDestination;
+        System.out.println(stockholmLulea);
+
+        // Read transportFile
+        File stockholmLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmLuleaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmLuleatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmLuleatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                int stockholmLuleaCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmLuleaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75 ,"Luleå", 350);
+                int busstockholmLuleaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmLuleaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination6(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationSkara = new routeDestination("Skara", 300);
+        System.out.println("You chose to travel to "
+                + destinationSkara.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmSkara= startStockholm.routeStart +"----->"
+                +destinationSkara.routeDestination;
+        System.out.println(stockholmSkara);
+
+        // Read transportFile
+        File stockholmSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmSkaraFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmSkaratransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmSkaratransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                int stockholmSkaraCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmSkaraCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                int busstockholmSkaraCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmSkaraCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination5(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+        System.out.println("You chose to travel to "
+                + destinationKiruna.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmKiruna= startStockholm.routeStart +"----->"
+                +destinationKiruna.routeDestination;
+        System.out.println(stockholmKiruna);
+
+        // Read transportFile
+        File stockholmKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmKirunaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmKirunatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmKirunatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                int stockholmKirunaCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmKirunaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                int busstockholmKirunaCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmKirunaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination4(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+        System.out.println("You chose to travel to "
+                + destinationMolndal.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmMolndal= startStockholm.routeStart +"----->"
+                +destinationMolndal.routeDestination;
+        System.out.println(stockholmMolndal);
+
+        // Read transportFile
+        File stockholmMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmMolndalFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmMolndaltransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmMolndaltransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                int stockholmMolndalCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmMolndalCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                int busstockholmMolndalCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmMolndalCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination3(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+        System.out.println("You chose to travel to "
+                + destinationVasteras.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmVasteras= startStockholm.routeStart +"----->"
+                +destinationVasteras.routeDestination;
+        System.out.println(stockholmVasteras);
+
+        // Read transportFile
+        File stockholmVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmVasterasFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmVasterastransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmVasterastransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                int stockholmVasterasCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmVasterasCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                int busstockholmVasterasCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmVasterasCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case2Destination1(Scanner passengers, routeStart startStockholm) {
+        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+        System.out.println("You chose to travel to "
+                + destinationMalmo.routeDestination + ".");
+        System.out.println("\n");
+        String stockholmMalmo= startStockholm.routeStart +"----->"
+                +destinationMalmo.routeDestination;
+        System.out.println(stockholmMalmo);
+
+        // Read transportFile
+        File stockholmMalmoFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(stockholmMalmoFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner stockholmMalmotransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (stockholmMalmotransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                int stockholmMalmoCost=(startStockholm.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*stockholmMalmoCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                int busstockholmMalmoCost=(startStockholm.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busstockholmMalmoCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destinations(Scanner passengers, routeStart startMalmo, Scanner case1scan) {
+        switch (case1scan.nextInt()) {
+            case 1:
+                System.out.println("You cant have the same destination as starting point.");
+                break;
+            case 2:
+                case1Destination2(passengers, startMalmo);
+                break;
+            case 3:
+                case1Destination3(passengers, startMalmo);
+                break;
+            case 4:
+                case1Destination4(passengers, startMalmo);
+                break;
+            case 5:
+                case1Destination5(passengers, startMalmo);
+                break;
+            case 6:
+                case1Destination6(passengers, startMalmo);
+                break;
+            case 7:
+                case1Destination7(passengers, startMalmo);
+                break;
+            case 8:
+                case1Destination8(passengers, startMalmo);
+                break;
+            case 9:
+                case1Destination9(passengers, startMalmo);
+                break;
+            case 10:
+                case1Destination10(passengers, startMalmo);
+                break;
+        }
+        return;
+    }
+
+    private static void case1Destination10(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+        System.out.println("You chose to travel to "
+                + destinationEslov.routeDestination + ".");
+        System.out.println("\n");
+        String malmoEslov= startMalmo.routeStart +"----->"
+                +destinationEslov.routeDestination;
+        System.out.println(malmoEslov);
+
+        // Read transportFile
+        File malmoEslovFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoEslovFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoEslovtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoEslovtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
+                int malmoEslovCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoEslovCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Eslöv", 500);
+                int busmalmoEslovCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoEslovCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination9(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+        System.out.println("You chose to travel to "
+                + destinationStehag.routeDestination + ".");
+        System.out.println("\n");
+        String malmoStehag= startMalmo.routeStart +"----->"
+                +destinationStehag.routeDestination;
+        System.out.println(malmoStehag);
+
+        // Read transportFile
+        File malmoStehagFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoStehagFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoStehagtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoStehagtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                int malmoStehagCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoStehagCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                int busmalmoStehagCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoStehagCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination8(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+        System.out.println("You chose to travel to "
+                + destinationMaglehem.routeDestination + ".");
+        System.out.println("\n");
+        String malmoMaglehem= startMalmo.routeStart +"----->"
+                +destinationMaglehem.routeDestination;
+        System.out.println(malmoMaglehem);
+
+        // Read transportFile
+        File malmoMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoMaglehemFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoMaglehemtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoMaglehemtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                int malmoMaglehemCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoMaglehemCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                int busmalmoMaglehemCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoMaglehemCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination7(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+        System.out.println("You chose to travel to "
+                + destinationLulea.routeDestination + ".");
+        System.out.println("\n");
+        String malmoLulea= startMalmo.routeStart +"----->"
+                +destinationLulea.routeDestination;
+        System.out.println(malmoLulea);
+
+        // Read transportFile
+        File malmoLuleaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoLuleaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoLuleatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoLuleatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                int malmoLuleaCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoLuleaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                int busmalmoLuleaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoLuleaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination6(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationSkara = new routeDestination("Skara", 300);
+        System.out.println("You chose to travel to "
+                + destinationSkara.routeDestination + ".");
+        System.out.println("\n");
+        String malmoSkara= startMalmo.routeStart +"----->"
+                +destinationSkara.routeDestination;
+        System.out.println(malmoSkara);
+
+        // Read transportFile
+        File malmoSkaraFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoSkaraFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoSkaratransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoSkaratransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                int malmoSkaraCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoSkaraCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                int busmalmoSkaraCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoSkaraCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination5(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+        System.out.println("You chose to travel to "
+                + destinationKiruna.routeDestination + ".");
+        System.out.println("\n");
+        String malmoKiruna= startMalmo.routeStart +"----->"
+                +destinationKiruna.routeDestination;
+        System.out.println(malmoKiruna);
+
+        // Read transportFile
+        File malmoKirunaFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoKirunaFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoKirunatransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoKirunatransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                int malmoKirunaCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoKirunaCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                int busmalmoKirunaCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoKirunaCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination4(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+        System.out.println("You chose to travel to "
+                + destinationMolndal.routeDestination + ".");
+        System.out.println("\n");
+        String malmoMolndal= startMalmo.routeStart +"----->"
+                +destinationMolndal.routeDestination;
+        System.out.println(malmoMolndal);
+
+        // Read transportFile
+        File malmoMolndalFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoMolndalFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoMolndaltransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoMolndaltransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                int malmoMolndalCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoMolndalCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                int busmalmoMolndalCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoMolndalCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination3(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+        System.out.println("You chose to travel to "
+                + destinationVasteras.routeDestination + ".");
+        System.out.println("\n");
+        String malmoVasteras= startMalmo.routeStart +"----->"
+                +destinationVasteras.routeDestination;
+        System.out.println(malmoVasteras);
+
+        // Read transportFile
+        File malmoVasterasFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoVasterasFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoVasterastransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoVasterastransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                int malmoVasterasCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoVasterasCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                int busmalmoVasterasCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoVasterasCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    private static void case1Destination2(Scanner passengers, routeStart startMalmo) {
+        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+        System.out.println("You chose to travel to "
+                + destinationStockholm.routeDestination + ".");
+        System.out.println("\n");
+        String malmoStockholm= startMalmo.routeStart +"----->"
+                +destinationStockholm.routeDestination;
+        System.out.println(malmoStockholm);
+
+        //Read transportFile
+        File malmoStockholmFile = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(malmoStockholmFile);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+        //Choose transportation
+        System.out.println("Choose transportation alternative: ");
+        Scanner malmoStockholmtransportScan = new Scanner(System.in);
+        System.out.print(">");
+
+        switch (malmoStockholmtransportScan.nextInt()){
+            case 1:
+                System.out.println("You chose to go by train");
+                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                int malmoStockholmCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int totalCost = (passengers.nextInt()*malmoStockholmCost);
+                System.out.println(totalCost);
+                break;
+            case 2:
+                System.out.println("You chose to go by bus");
+                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                int busmalmoStockholmCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int bustotalCost = (passengers.nextInt()*busmalmoStockholmCost);
+                System.out.println(bustotalCost);
+                break;
+            case 3:
                 break;
         }
     }
