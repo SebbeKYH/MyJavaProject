@@ -184,24 +184,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(eslovStehag);
 
-        // Read transportFile
-        File eslovStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -221,6 +210,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Stehag", 450);
+                int helicoptereslovStehagCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -234,24 +230,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(eslovMaglehem);
 
-        // Read transportFile
-        File eslovMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -271,6 +256,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Maglehem", 400);
+                int helicoptereslovMaglehemCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMaglehemCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -284,24 +276,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(eslovLulea);
 
-        // Read transportFile
-        File eslovLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -321,6 +302,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Luleå", 350);
+                int helicoptereslovLuleaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovLuleaCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -334,24 +322,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(eslovSkara);
 
-        // Read transportFile
-        File eslovSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -371,6 +348,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Skara", 300);
+                int helicoptereslovSkaraCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovSkaraCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -384,24 +368,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(eslovKiruna);
 
-        // Read transportFile
-        File eslovKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -421,6 +394,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Kiruna", 250);
+                int helicoptereslovKirunaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovKirunaCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -434,24 +414,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(eslovMolndal);
 
-        // Read transportFile
-        File eslovMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -471,6 +440,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Mölndal", 200);
+                int helicoptereslovMolndalCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMolndalCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -484,24 +460,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(eslovVasteras);
 
-        // Read transportFile
-        File eslovVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -521,6 +486,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Västerås", 150);
+                int helicoptereslovVasterasCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovVasterasCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -534,24 +506,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(eslovStockholm);
 
-        // Read transportFile
-        File eslovStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -571,6 +532,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Stockholm", 100);
+                int helicoptereslovStockholmCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStockholmCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -584,24 +552,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(eslovMalmo);
 
-        // Read transportFile
-        File eslovMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(eslovMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner eslovMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (eslovMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -621,6 +578,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Malmö", 50);
+                int helicoptereslovMalmoCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMalmoCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -669,24 +633,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(stehagEslov);
 
-        // Read transportFile
-        File stehagEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -726,24 +679,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(stehagMaglehem);
 
-        // Read transportFile
-        File stehagMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -783,24 +725,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(stehagLulea);
 
-        // Read transportFile
-        File stehagLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -840,24 +771,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(stehagSkara);
 
-        // Read transportFile
-        File stehagSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -897,24 +817,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(stehagKiruna);
 
-        // Read transportFile
-        File stehagKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -954,24 +863,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(stehagMolndal);
 
-        // Read transportFile
-        File stehagMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -1011,23 +909,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(stehagVasteras);
 
-        // Read transportFile
-        File stehagVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (stehagVasterastransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -1067,24 +955,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(stehagStockholm);
 
-        // Read transportFile
-        File stehagStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -1124,24 +1001,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(stehagMalmo);
 
-        // Read transportFile
-        File stehagMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stehagMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stehagMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stehagMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -1216,24 +1082,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(maglehemEslov);
 
-        // Read transportFile
-        File maglehemEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -1273,24 +1128,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(maglehemStehag);
 
-        // Read transportFile
-        File maglehemStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -1330,24 +1174,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(maglehemLulea);
 
-        // Read transportFile
-        File maglehemLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -1387,24 +1220,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(maglehemSkara);
 
-        // Read transportFile
-        File maglehemSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -1444,24 +1266,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(maglehemKiruna);
 
-        // Read transportFile
-        File maglehemKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -1501,24 +1312,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(maglehemMolndal);
 
-        // Read transportFile
-        File maglehemMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -1558,24 +1358,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(maglehemVasteras);
 
-        // Read transportFile
-        File maglehemVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -1615,23 +1404,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(maglehemStockholm);
 
-        // Read transportFile
-        File maglehemStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (maglehemStockholmtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -1671,24 +1450,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(maglehemMalmo);
 
-        // Read transportFile
-        File maglehemMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(maglehemMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner maglehemMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (maglehemMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -1763,24 +1531,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(luleaEslov);
 
-        // Read transportFile
-        File luleaEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (luleaEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -1820,23 +1577,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(luleaStehag);
 
-        // Read transportFile
-        File luleaStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaStehagtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -1876,23 +1623,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(luleaMaglehem);
 
-        // Read transportFile
-        File luleaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaMaglehemtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -1932,23 +1669,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(luleaSkara);
 
-        // Read transportFile
-        File luleaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaSkaratransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -1988,23 +1715,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(luleaKiruna);
 
-        // Read transportFile
-        File luleaKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaKirunatransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -2044,23 +1761,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(luleaMolndal);
 
-        // Read transportFile
-        File luleaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaMolndaltransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -2100,23 +1807,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(luleaVasteras);
 
-        // Read transportFile
-        File luleaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (luleaVasterastransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -2156,24 +1853,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(luleaStockholm);
 
-        // Read transportFile
-        File luleaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (luleaStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -2213,24 +1899,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(luleaMalmo);
 
-        // Read transportFile
-        File luleaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(luleaMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner luleaMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (luleaMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -2305,24 +1980,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(skaraEslov);
 
-        // Read transportFile
-        File skaraEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -2362,24 +2026,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(skaraStehag);
 
-        // Read transportFile
-        File skaraStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -2419,24 +2072,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(skaraMaglehem);
 
-        // Read transportFile
-        File skaraMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -2476,24 +2118,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(skaraLulea);
 
-        // Read transportFile
-        File skaraLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -2533,24 +2164,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(skaraKiruna);
 
-        // Read transportFile
-        File skaraKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -2590,24 +2210,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(skaraMolndal);
 
-        // Read transportFile
-        File skaraMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -2647,24 +2256,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(skaraVasteras);
 
-        // Read transportFile
-        File skaraVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -2704,24 +2302,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(skaraStockholm);
 
-        // Read transportFile
-        File skaraStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -2761,24 +2348,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(skaraMalmo);
 
-        // Read transportFile
-        File skaraMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(skaraMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner skaraMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (skaraMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -2853,24 +2429,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(kirunaEslov);
 
-        // Read transportFile
-        File kirunaEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -2910,24 +2475,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(kirunaStehag);
 
-        // Read transportFile
-        File kirunaStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -2967,24 +2521,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(kirunaMaglehem);
 
-        // Read transportFile
-        File kirunaMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -3024,24 +2567,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(kirunaLulea);
 
-        // Read transportFile
-        File kirunaLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -3081,24 +2613,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(kirunaSkara);
 
-        // Read transportFile
-        File kirunaSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -3138,24 +2659,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(kirunaMolndal);
 
-        // Read transportFile
-        File kirunaMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -3195,24 +2705,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(kirunaVasteras);
 
-        // Read transportFile
-        File kirunaVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -3252,24 +2751,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(kirunaStockholm);
 
-        // Read transportFile
-        File kirunaStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -3309,24 +2797,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(kirunaMalmo);
 
-        // Read transportFile
-        File kirunaMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(kirunaMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner kirunaMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (kirunaMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -3401,24 +2878,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(molndalEslov);
 
-        // Read transportFile
-        File molndalEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -3458,24 +2924,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(molndalStehag);
 
-        // Read transportFile
-        File molndalStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -3515,24 +2970,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(molndalMaglehem);
 
-        // Read transportFile
-        File molndalMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -3572,24 +3016,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(molndalLulea);
 
-        // Read transportFile
-        File molndalLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -3629,24 +3062,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(molndalSkara);
 
-        // Read transportFile
-        File molndalSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -3686,24 +3108,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(molndalKiruna);
 
-        // Read transportFile
-        File molndalKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -3743,24 +3154,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(molndalVasteras);
 
-        // Read transportFile
-        File molndalVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -3800,24 +3200,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(molndalStockholm);
 
-        // Read transportFile
-        File molndalStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -3858,23 +3247,13 @@ public class Main {
         System.out.println(molndalMalmo);
 
         // Read transportFile
-        File molndalMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(molndalMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner molndalMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (molndalMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -3949,24 +3328,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(vasterasEslov);
 
-        // Read transportFile
-        File vasterasEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -4006,24 +3374,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(vasterasStehag);
 
-        // Read transportFile
-        File vasterasStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -4063,24 +3420,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(vasterasMaglehem);
 
-        // Read transportFile
-        File vasterasMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -4120,24 +3466,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(vasterasLulea);
 
-        // Read transportFile
-        File vasterasLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -4177,24 +3512,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(vasterasSkara);
 
-        // Read transportFile
-        File vasterasSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -4234,23 +3558,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(vasterasKiruna);
 
-        // Read transportFile
-        File vasterasKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (vasterasKirunatransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -4290,24 +3604,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(vasterasMolndal);
 
-        // Read transportFile
-        File vasterasMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -4347,24 +3650,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(vasterasStockholm);
 
-        // Read transportFile
-        File vasterasStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasStockholmtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -4404,24 +3696,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(vasterasMalmo);
 
-        // Read transportFile
-        File vasterasMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(vasterasMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner vasterasMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (vasterasMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -4496,24 +3777,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(stockholmEslov);
 
-        // Read transportFile
-        File stockholmEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmEslovtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -4553,24 +3823,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(stockholmStehag);
 
-        // Read transportFile
-        File stockholmStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmStehagtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -4610,24 +3869,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(stockholmMaglehem);
 
-        // Read transportFile
-        File stockholmMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -4667,24 +3915,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(stockholmLulea);
 
-        // Read transportFile
-        File stockholmLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -4724,24 +3961,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(stockholmSkara);
 
-        // Read transportFile
-        File stockholmSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmSkaratransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -4781,24 +4007,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(stockholmKiruna);
 
-        // Read transportFile
-        File stockholmKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmKirunatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -4838,24 +4053,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(stockholmMolndal);
 
-        // Read transportFile
-        File stockholmMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -4895,24 +4099,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(stockholmVasteras);
 
-        // Read transportFile
-        File stockholmVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmVasterastransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -4952,24 +4145,13 @@ public class Main {
                 +destinationMalmo.routeDestination;
         System.out.println(stockholmMalmo);
 
-        // Read transportFile
-        File stockholmMalmoFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(stockholmMalmoFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner stockholmMalmotransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (stockholmMalmotransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -5045,23 +4227,13 @@ public class Main {
                 +destinationEslov.routeDestination;
         System.out.println(malmoEslov);
 
-        // Read transportFile
-        File malmoEslovFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoEslovFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoEslovtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoEslovtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -5101,23 +4273,13 @@ public class Main {
                 +destinationStehag.routeDestination;
         System.out.println(malmoStehag);
 
-        // Read transportFile
-        File malmoStehagFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoStehagFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoStehagtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoStehagtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -5157,24 +4319,13 @@ public class Main {
                 +destinationMaglehem.routeDestination;
         System.out.println(malmoMaglehem);
 
-        // Read transportFile
-        File malmoMaglehemFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoMaglehemFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoMaglehemtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (malmoMaglehemtransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -5214,24 +4365,13 @@ public class Main {
                 +destinationLulea.routeDestination;
         System.out.println(malmoLulea);
 
-        // Read transportFile
-        File malmoLuleaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoLuleaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoLuleatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (malmoLuleatransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -5271,23 +4411,13 @@ public class Main {
                 +destinationSkara.routeDestination;
         System.out.println(malmoSkara);
 
-        // Read transportFile
-        File malmoSkaraFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoSkaraFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoSkaratransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoSkaratransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -5327,23 +4457,13 @@ public class Main {
                 +destinationKiruna.routeDestination;
         System.out.println(malmoKiruna);
 
-        // Read transportFile
-        File malmoKirunaFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoKirunaFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoKirunatransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoKirunatransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -5383,24 +4503,13 @@ public class Main {
                 +destinationMolndal.routeDestination;
         System.out.println(malmoMolndal);
 
-        // Read transportFile
-        File malmoMolndalFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoMolndalFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
         //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoMolndaltransportScan = new Scanner(System.in);
-        System.out.print(">");
+        Scanner transportationScan = transportScanner();
 
-        switch (malmoMolndaltransportScan.nextInt()){
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -5440,23 +4549,13 @@ public class Main {
                 +destinationVasteras.routeDestination;
         System.out.println(malmoVasteras);
 
-        // Read transportFile
-        File malmoVasterasFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoVasterasFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoVasterastransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoVasterastransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -5496,23 +4595,13 @@ public class Main {
                 +destinationStockholm.routeDestination;
         System.out.println(malmoStockholm);
 
-        //Read transportFile
-        File malmoStockholmFile = new File("./src/InformationFolder/transportAlternatives");
-        try {
-            Scanner transportScanner = new Scanner(malmoStockholmFile);
-            while (transportScanner.hasNextLine()) {
-                System.out.println(transportScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-        //Choose transportation
-        System.out.println("Choose transportation alternative: ");
-        Scanner malmoStockholmtransportScan = new Scanner(System.in);
-        System.out.print(">");
+        //Read and display transport alternatives
+        readTransportAlternatives();
 
-        switch (malmoStockholmtransportScan.nextInt()){
+        //Choose transportation
+        Scanner transportationScan = transportScanner();
+
+        switch (transportationScan.nextInt()){
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -5540,6 +4629,27 @@ public class Main {
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoStockholmCost);
                 System.out.println(helicoptertotalCost);
                 break;
+        }
+    }
+
+    private static Scanner transportScanner() {
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        System.out.print(">");
+        return transportationScan;
+    }
+
+    private static void readTransportAlternatives() {
+        //Read transportFile
+        File transportAlternatives = new File("./src/InformationFolder/transportAlternatives");
+        try {
+            Scanner transportScanner = new Scanner(transportAlternatives);
+            while (transportScanner.hasNextLine()) {
+                System.out.println(transportScanner.nextLine());
+            }
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
         }
     }
 
