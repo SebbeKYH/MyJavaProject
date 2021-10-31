@@ -9,6 +9,8 @@
 * Not go to the same destination as start   DONE
 * Textfile and fileWriter to update template
 * MENU back if user regrets
+* Try to make read file method
+* Try to make scanner method
 
 - StartCost should be 1000
 - DestinationCost should be less
