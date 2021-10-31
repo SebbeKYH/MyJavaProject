@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[]args) {
-        //Scanner mainScan = new Scanner(System.in);
 
-        //Introduction to the game and design
-        welcomeToTheGame();
+            //Introduction to the game and design
+            welcomeToTheGame();
 
-        //Time to choose starting point
-        travelFrom();
+            //Time to choose starting point
+            travelFrom();
 
-        //Make choices for travel
-        makingChoices();
+            //Make choices for travel
+            makingChoices();
     }
 
     private static void makingChoices() {
@@ -199,7 +198,11 @@ public class Main {
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovStehagCost);
                 System.out.println(totalCost);
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
+
             case 2:
                 System.out.println("You chose to go by bus");
                 routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
@@ -207,7 +210,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -217,6 +223,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -245,6 +254,9 @@ public class Main {
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovMaglehemCost);
                 System.out.println(totalCost);
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -253,7 +265,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -263,6 +278,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -290,7 +308,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -299,7 +320,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -309,6 +333,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -336,7 +363,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -345,7 +375,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -355,6 +388,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -382,7 +418,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -391,7 +430,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -401,6 +443,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -428,7 +473,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -437,7 +485,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -447,6 +498,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -474,7 +528,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -483,7 +540,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -493,6 +553,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -520,7 +583,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -529,7 +595,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -539,6 +608,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -566,7 +638,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*eslovMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -575,7 +650,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buseslovMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -585,6 +663,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -647,7 +728,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -656,7 +740,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -666,6 +753,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -693,7 +783,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -702,7 +795,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -712,6 +808,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -739,7 +838,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -748,7 +850,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -758,6 +863,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -785,7 +893,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -794,7 +905,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -804,6 +918,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -831,7 +948,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -840,7 +960,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -850,6 +973,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -877,7 +1003,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -886,7 +1015,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -896,6 +1028,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -923,7 +1058,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -932,7 +1070,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -942,6 +1083,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -969,7 +1113,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -978,7 +1125,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -988,6 +1138,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1015,7 +1168,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stehagMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1024,7 +1180,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstehagMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1034,6 +1193,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1096,7 +1258,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1105,7 +1270,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1115,6 +1283,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1142,7 +1313,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1151,7 +1325,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1161,6 +1338,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1188,7 +1368,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1197,7 +1380,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1207,6 +1393,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1234,7 +1423,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1243,7 +1435,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1253,6 +1448,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1280,7 +1478,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1289,7 +1490,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1299,6 +1503,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1326,7 +1533,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1335,7 +1545,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1345,6 +1558,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1372,7 +1588,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1381,7 +1600,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1391,6 +1613,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1418,7 +1643,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1427,7 +1655,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1437,6 +1668,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1464,7 +1698,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*maglehemMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1473,7 +1710,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmaglehemMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1483,6 +1723,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1545,7 +1788,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1554,7 +1800,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1564,6 +1813,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1591,7 +1843,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1600,7 +1855,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1610,6 +1868,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1637,7 +1898,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1646,7 +1910,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1656,6 +1923,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1683,7 +1953,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1692,7 +1965,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1702,6 +1978,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1729,7 +2008,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1738,7 +2020,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1748,6 +2033,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1775,7 +2063,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1784,7 +2075,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1794,6 +2088,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1821,7 +2118,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1830,7 +2130,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1840,6 +2143,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1867,7 +2173,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1876,7 +2185,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1886,6 +2198,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1913,7 +2228,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*luleaMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -1922,7 +2240,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busluleaMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -1932,6 +2253,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -1994,7 +2318,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2003,7 +2330,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2013,6 +2343,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2040,7 +2373,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2049,7 +2385,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2059,6 +2398,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2086,7 +2428,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2095,7 +2440,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2105,6 +2453,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2132,7 +2483,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2141,7 +2495,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2151,6 +2508,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2178,7 +2538,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2187,7 +2550,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2197,6 +2563,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2224,7 +2593,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2233,16 +2605,22 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
-                routeTransport helicopter = new routeTransport("Helicopter",25,"Maglehem", 200);
-                int helicopterskaraMaglehemCost=(startSkara.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Mölndal", 200);
+                int helicopterskaraMolndalCost=(startSkara.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMaglehemCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2270,7 +2648,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2279,7 +2660,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2289,6 +2673,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2316,7 +2703,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2325,7 +2715,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2335,6 +2728,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2362,7 +2758,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*skaraMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2371,7 +2770,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busskaraMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2381,6 +2783,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2443,7 +2848,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2452,7 +2860,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2462,6 +2873,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2489,7 +2903,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2498,7 +2915,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2508,6 +2928,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2535,7 +2958,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2544,7 +2970,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2554,6 +2983,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2581,7 +3013,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2590,7 +3025,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2600,6 +3038,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2627,7 +3068,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2636,7 +3080,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2646,6 +3093,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2673,7 +3123,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2682,16 +3135,22 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Mölndal", 200);
-                int helicopterkirunaMölndalCost=(startKiruna.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                int helicopterkirunaMolndalCost=(startKiruna.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMölndalCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2719,7 +3178,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2728,7 +3190,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2738,6 +3203,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2765,7 +3233,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2774,7 +3245,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2784,6 +3258,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2811,7 +3288,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*kirunaMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2820,7 +3300,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*buskirunaMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2830,6 +3313,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2892,7 +3378,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2901,7 +3390,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2911,6 +3403,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2938,7 +3433,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2947,7 +3445,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -2957,6 +3458,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -2984,7 +3488,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -2993,7 +3500,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3003,6 +3513,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3030,7 +3543,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3039,7 +3555,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3049,6 +3568,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3076,7 +3598,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3085,7 +3610,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3095,6 +3623,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3122,7 +3653,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3131,7 +3665,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3141,6 +3678,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3168,7 +3708,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3177,7 +3720,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3187,6 +3733,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3214,7 +3763,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3223,7 +3775,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3233,6 +3788,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3261,7 +3819,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*molndalMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3270,7 +3831,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmolndalMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3280,6 +3844,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3342,7 +3909,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3351,7 +3921,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3361,6 +3934,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3388,7 +3964,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3397,7 +3976,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3407,6 +3989,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3434,7 +4019,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3443,7 +4031,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3453,6 +4044,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3480,7 +4074,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3489,7 +4086,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3499,6 +4099,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3526,7 +4129,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3535,7 +4141,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3545,6 +4154,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3572,7 +4184,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3581,7 +4196,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3591,6 +4209,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3618,7 +4239,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3627,7 +4251,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3637,6 +4264,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3664,7 +4294,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasStockholmCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3673,7 +4306,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasStockholmCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3683,6 +4319,9 @@ public class Main {
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3710,7 +4349,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*vasterasMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3719,7 +4361,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busvasterasMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3727,23 +4372,11 @@ public class Main {
                 int helicoptervasterasMalmoCost=(startVasteras.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptervasterasMalmoCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+vasterasMalmo+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3806,7 +4439,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3815,7 +4451,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3823,23 +4462,11 @@ public class Main {
                 int helicopterstockholmEslovCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmEslovCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmEslov+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3867,7 +4494,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3876,7 +4506,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3884,23 +4517,11 @@ public class Main {
                 int helicopterstockholmStehagCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmStehagCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmStehag+"      \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3928,7 +4549,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3937,7 +4561,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -3945,23 +4572,11 @@ public class Main {
                 int helicopterstockholmMaglehemCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmMaglehemCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmMaglehem+"    \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -3989,7 +4604,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -3998,7 +4616,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4006,23 +4627,11 @@ public class Main {
                 int helicopterstockholmLuleaCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmLuleaCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmLulea+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4050,7 +4659,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4059,7 +4671,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4067,23 +4682,11 @@ public class Main {
                 int helicopterstockholmSkaraCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmSkaraCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmSkara+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4111,7 +4714,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4120,7 +4726,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4128,23 +4737,11 @@ public class Main {
                 int helicopterstockholmKirunaCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmKirunaCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmKiruna+"      \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4172,7 +4769,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4181,7 +4781,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4189,23 +4792,11 @@ public class Main {
                 int helicopterstockholmMolndalCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmMolndalCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmMolndal+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4233,7 +4824,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4242,7 +4836,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4250,23 +4847,11 @@ public class Main {
                 int helicopterstockholmVasterasCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmVasterasCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmVasteras+"    \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4294,7 +4879,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*stockholmMalmoCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4303,7 +4891,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busstockholmMalmoCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4311,23 +4902,11 @@ public class Main {
                 int helicopterstockholmMalmoCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicopterstockholmMalmoCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+stockholmMalmo+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4365,7 +4944,6 @@ public class Main {
                 case1Destination10(passengers, startMalmo);
                 break;
         }
-        return;
     }
 
     private static void case1Destination10(Scanner passengers, routeStart startMalmo) {
@@ -4391,7 +4969,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoEslovCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4400,7 +4981,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoEslovCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4408,23 +4992,11 @@ public class Main {
                 int helicoptermalmoEslovCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoEslovCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoEslovCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoEslov+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4452,7 +5024,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoStehagCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4461,7 +5036,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoStehagCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4469,23 +5047,11 @@ public class Main {
                 int helicoptermalmoStehagCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoStehagCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoStehag+"          \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4513,7 +5079,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoMaglehemCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4522,7 +5091,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoMaglehemCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4530,23 +5102,11 @@ public class Main {
                 int helicoptermalmoMaglehemCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoMaglehemCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoMaglehem+"        \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4574,7 +5134,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoLuleaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4583,7 +5146,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoLuleaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4591,23 +5157,11 @@ public class Main {
                 int helicoptermalmoLuleaCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoLuleaCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoLulea+"           \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4635,7 +5189,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoSkaraCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4644,7 +5201,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoSkaraCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4652,23 +5212,11 @@ public class Main {
                 int helicoptermalmoSkaraCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoSkaraCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoSkara    +"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4696,7 +5244,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoKirunaCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4705,7 +5256,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoKirunaCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4713,23 +5267,11 @@ public class Main {
                 int helicoptermalmoKirunaCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoKirunaCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoKiruna+   "       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4757,7 +5299,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoMolndalCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4766,7 +5311,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoMolndalCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4774,23 +5322,11 @@ public class Main {
                 int helicoptermalmoMolndalCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoMolndalCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoMolndal+  "       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
@@ -4818,7 +5354,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int totalCost = (passengers.nextInt()*malmoVasterasCost);
-                System.out.println(totalCost);
+                System.out.println("your total cost is: "+totalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 2:
                 System.out.println("You chose to go by bus");
@@ -4827,7 +5366,10 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int bustotalCost = (passengers.nextInt()*busmalmoVasterasCost);
-                System.out.println(bustotalCost);
+                System.out.println("Your total cost is: "+bustotalCost+" kr");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
             case 3:
                 System.out.println("You chose to go by helicopter");
@@ -4835,85 +5377,79 @@ public class Main {
                 int helicoptermalmoVasterasCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoVasterasCost);
+                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoVasteras+ "       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
+
+                //Do you want to buy your ticket?
+                buyTicket(transportationScan);
                 break;
         }
     }
 
-    private static void case1Destination2(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
-        System.out.println("You chose to travel to "
-                + destinationStockholm.routeDestination + ".");
-        System.out.println("\n");
-        String malmoStockholm= startMalmo.routeStart +"----->"
-                +destinationStockholm.routeDestination;
-        System.out.println(malmoStockholm);
+    private static void case1Destination2(Scanner passengers, routeStart startMalmo){
+            routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+            System.out.println("You chose to travel to "
+                    + destinationStockholm.routeDestination + ".");
+            System.out.println("\n");
+            String malmoStockholm = startMalmo.routeStart + "----->"
+                    + destinationStockholm.routeDestination;
+            System.out.println(malmoStockholm);
 
-        //Read and display transport alternatives
-        readTransportAlternatives();
+            //Read and display transport alternatives
+            readTransportAlternatives();
 
-        //Choose transportation
-        Scanner transportationScan = transportScanner();
+            //Choose transportation
+            Scanner transportationScan = transportScanner();
 
-        switch (transportationScan.nextInt()){
-            case 1:
-                System.out.println("You chose to go by train");
-                routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
-                int malmoStockholmCost=(startMalmo.startCost-(train.transportCost + train.destinationCost));
-                System.out.println("How many passengers are traveling?");
-                System.out.print("> ");
-                int totalCost = (passengers.nextInt()*malmoStockholmCost);
-                System.out.println(totalCost);
-                break;
-            case 2:
-                System.out.println("You chose to go by bus");
-                routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
-                int busmalmoStockholmCost=(startMalmo.startCost-(bus.transportCost + bus.destinationCost));
-                System.out.println("How many passengers are traveling?");
-                System.out.print("> ");
-                int bustotalCost = (passengers.nextInt()*busmalmoStockholmCost);
-                System.out.println(bustotalCost);
-                break;
-            case 3:
-                System.out.println("You chose to go by helicopter");
-                routeTransport helicopter = new routeTransport("Helicopter",25,"Stockholm", 100);
-                int helicoptermalmoStockholmCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
-                System.out.println("How many passengers are traveling?");
-                System.out.print("> ");
-                int nrPassengers=passengers.nextInt();
-                int helicoptertotalCost = (nrPassengers*helicoptermalmoStockholmCost);
-                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
-                System.out.println("******************************************************************\n" +
-                        "******************************************************************\n" +
-                        "*****************--Welcome to the travel assistant--**************\n" +
-                        "******************************************************************\n" +
-                        "***--This program will help you book the travel of you dreams--***\n" +
-                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
-                        "           |                        |                             \n" +
-                        "           |                        |        Route                \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Transport  |     Helicopter         |    "+malmoStockholm+"       \n" +
-                        " ----------|------------------------|-----------------------------\n" +
-                        "Passengers |     "+nrPassengers+"                  |                             \n" +
-                        "-----------|------------------------|-----------------------------\n" +
-                        "Price      |"+helicoptertotalCost+"                    |                             ");
-                break;
+            switch (transportationScan.nextInt()) {
+                case 1:
+                    System.out.println("You chose to go by train");
+                    routeTransport train = new routeTransport("Train", 100, "Stockholm", 100);
+                    int malmoStockholmCost = (startMalmo.startCost - (train.transportCost + train.destinationCost));
+                    System.out.println("How many passengers are traveling?");
+                    System.out.print("> ");
+                    int totalCost = (passengers.nextInt() * malmoStockholmCost);
+                    System.out.println("your total cost is: " + totalCost + " kr");
+
+                    //Do you want to buy your ticket?
+                    buyTicket(transportationScan);
+                    break;
+                case 2:
+                    System.out.println("You chose to go by bus");
+                    routeTransport bus = new routeTransport("Bus", 75, "Stockholm", 100);
+                    int busmalmoStockholmCost = (startMalmo.startCost - (bus.transportCost + bus.destinationCost));
+                    System.out.println("How many passengers are traveling?");
+                    System.out.print("> ");
+                    int bustotalCost = (passengers.nextInt() * busmalmoStockholmCost);
+                    System.out.println("Your total cost is: " + bustotalCost + " kr");
+
+                    //Do you want to buy your ticket?
+                    buyTicket(transportationScan);
+
+                    break;
+                case 3:
+                    System.out.println("You chose to go by helicopter");
+                    routeTransport helicopter = new routeTransport("Helicopter", 25, "Stockholm", 100);
+                    int helicoptermalmoStockholmCost = (startMalmo.startCost - (helicopter.transportCost + helicopter.destinationCost));
+                    System.out.println("How many passengers are traveling?");
+                    System.out.print("> ");
+                    int helicoptertotalCost = (passengers.nextInt() * helicoptermalmoStockholmCost);
+                    System.out.println("Your total cost is: " + helicoptertotalCost + " kr");
+
+                    //Do you want to buy your ticket?
+                    buyTicket(transportationScan);
+                    break;
+            }
+    }
+
+    private static void buyTicket(Scanner transportationScan) {
+        //Do you want to but the ticket?
+        System.out.println("Would you like to by your tiket y/n ?");
+        String buyTicket = transportationScan.next();
+        if (buyTicket.equalsIgnoreCase("y")) {
+            System.out.println("Congratulations, you have bought the ticket. Have a pleasant journey");
+        } else {
+            System.out.println("Welcome back another time");
         }
     }
 
@@ -4937,19 +5473,6 @@ public class Main {
             System.out.println("Trouble reading file");
         }
     }
-
-    /*private static void travelTo() {
-        File welcomeFile = new File("./src/InformationFolder/routeDestination");
-        try {
-            Scanner destinationScanner = new Scanner(welcomeFile);
-            while (destinationScanner.hasNextLine()) {
-                System.out.println(destinationScanner.nextLine());
-            }
-        }
-        catch(FileNotFoundException e){
-            System.out.println("Trouble reading file");
-        }
-    }*/
 
     private static void travelFrom() {
         File welcomeFile = new File("./src/InformationFolder/routeStart");
