@@ -221,6 +221,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Stehag", 450);
+                int helicoptereslovStehagCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -271,6 +278,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Maglehem", 400);
+                int helicoptereslovMaglehemCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMaglehemCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -321,6 +335,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Luleå", 350);
+                int helicoptereslovLuleaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovLuleaCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -371,6 +392,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Skara", 300);
+                int helicoptereslovSkaraCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovSkaraCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -421,6 +449,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Kiruna", 250);
+                int helicoptereslovKirunaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovKirunaCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -471,6 +506,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Molndal", 200);
+                int helicoptereslovMolndalCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMolndalCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -521,6 +563,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Västerås", 150);
+                int helicoptereslovVasterasCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovVasterasCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -571,6 +620,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Stockholm", 100);
+                int helicoptereslovStockholmCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStockholmCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
@@ -621,6 +677,13 @@ public class Main {
                 System.out.println(bustotalCost);
                 break;
             case 3:
+                System.out.println("You chose to go by helicopter");
+                routeTransport helicopter = new routeTransport("Helicopter",25,"Malmö", 50);
+                int helicoptereslovMalmoCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                System.out.println("How many passengers are traveling?");
+                System.out.print("> ");
+                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMalmoCost);
+                System.out.println(helicoptertotalCost);
                 break;
         }
     }
