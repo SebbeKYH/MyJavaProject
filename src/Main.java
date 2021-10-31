@@ -216,7 +216,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -262,7 +262,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -308,7 +308,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -354,7 +354,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -400,7 +400,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -446,7 +446,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMolndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -492,7 +492,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -538,7 +538,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -584,7 +584,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -665,7 +665,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -711,7 +711,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -757,7 +757,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -803,7 +803,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -849,7 +849,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -895,7 +895,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMolndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -941,7 +941,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -987,7 +987,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1033,7 +1033,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterstehagMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1114,7 +1114,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1160,7 +1160,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1206,7 +1206,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1252,7 +1252,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1298,7 +1298,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1344,7 +1344,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemMolndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1390,7 +1390,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1436,7 +1436,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1482,7 +1482,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermaglehemMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1563,7 +1563,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1609,7 +1609,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1655,7 +1655,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1701,7 +1701,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1747,7 +1747,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1793,7 +1793,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMolndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1839,7 +1839,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1885,7 +1885,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -1931,7 +1931,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterluleaMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2012,7 +2012,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2058,7 +2058,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2104,7 +2104,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2150,7 +2150,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2196,7 +2196,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2242,7 +2242,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2288,7 +2288,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2334,7 +2334,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2380,7 +2380,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterskaraMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2461,7 +2461,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2507,7 +2507,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2553,7 +2553,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2599,7 +2599,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2645,7 +2645,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2691,7 +2691,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMölndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2737,7 +2737,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2783,7 +2783,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2829,7 +2829,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicopterkirunaMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2910,7 +2910,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -2956,7 +2956,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3002,7 +3002,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3048,7 +3048,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3094,7 +3094,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3140,7 +3140,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3186,7 +3186,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalVasterasCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3232,7 +3232,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3279,7 +3279,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptermolndalMalmoCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3360,7 +3360,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasEslovCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3406,7 +3406,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasStehagCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3452,7 +3452,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3498,7 +3498,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasLuleaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3544,7 +3544,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasSkaraCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3590,7 +3590,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasKirunaCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3636,7 +3636,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMolndalCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3682,7 +3682,7 @@ public class Main {
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasStockholmCost);
-                System.out.println(helicoptertotalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
                 break;
         }
     }
@@ -3727,8 +3727,23 @@ public class Main {
                 int helicoptervasterasMalmoCost=(startVasteras.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptervasterasMalmoCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptervasterasMalmoCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+vasterasMalmo+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -3808,8 +3823,23 @@ public class Main {
                 int helicopterstockholmEslovCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmEslovCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmEslovCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmEslov+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -3854,8 +3884,23 @@ public class Main {
                 int helicopterstockholmStehagCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmStehagCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmStehagCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmStehag+"      \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -3900,8 +3945,23 @@ public class Main {
                 int helicopterstockholmMaglehemCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmMaglehemCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmMaglehem+"    \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -3946,8 +4006,23 @@ public class Main {
                 int helicopterstockholmLuleaCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmLuleaCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmLuleaCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmLulea+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -3992,8 +4067,23 @@ public class Main {
                 int helicopterstockholmSkaraCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmSkaraCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmSkaraCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmSkara+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4038,8 +4128,23 @@ public class Main {
                 int helicopterstockholmKirunaCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmKirunaCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmKirunaCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmKiruna+"      \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4084,8 +4189,23 @@ public class Main {
                 int helicopterstockholmMolndalCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMolndalCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmMolndalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmMolndal+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4130,8 +4250,23 @@ public class Main {
                 int helicopterstockholmVasterasCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmVasterasCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmVasterasCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmVasteras+"    \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4176,8 +4311,23 @@ public class Main {
                 int helicopterstockholmMalmoCost=(startStockholm.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicopterstockholmMalmoCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicopterstockholmMalmoCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+stockholmMalmo+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4258,8 +4408,23 @@ public class Main {
                 int helicoptermalmoEslovCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoEslovCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoEslovCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoEslov+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4304,8 +4469,23 @@ public class Main {
                 int helicoptermalmoStehagCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoStehagCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoStehagCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoStehag+"          \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4350,8 +4530,23 @@ public class Main {
                 int helicoptermalmoMaglehemCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoMaglehemCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoMaglehemCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoMaglehem+"        \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4396,8 +4591,23 @@ public class Main {
                 int helicoptermalmoLuleaCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoLuleaCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoLuleaCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoLulea+"           \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4442,8 +4652,23 @@ public class Main {
                 int helicoptermalmoSkaraCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoSkaraCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoSkaraCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoSkara    +"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4488,8 +4713,23 @@ public class Main {
                 int helicoptermalmoKirunaCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoKirunaCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoKirunaCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoKiruna+   "       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4534,8 +4774,23 @@ public class Main {
                 int helicoptermalmoMolndalCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoMolndalCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoMolndalCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoMolndal+  "       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4580,8 +4835,23 @@ public class Main {
                 int helicoptermalmoVasterasCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoVasterasCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoVasterasCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoVasteras+ "       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
@@ -4626,8 +4896,23 @@ public class Main {
                 int helicoptermalmoStockholmCost=(startMalmo.startCost-(helicopter.transportCost + helicopter.destinationCost));
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
-                int helicoptertotalCost = (passengers.nextInt()*helicoptermalmoStockholmCost);
-                System.out.println(helicoptertotalCost);
+                int nrPassengers=passengers.nextInt();
+                int helicoptertotalCost = (nrPassengers*helicoptermalmoStockholmCost);
+                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                System.out.println("******************************************************************\n" +
+                        "******************************************************************\n" +
+                        "*****************--Welcome to the travel assistant--**************\n" +
+                        "******************************************************************\n" +
+                        "***--This program will help you book the travel of you dreams--***\n" +
+                        "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n" +
+                        "           |                        |                             \n" +
+                        "           |                        |        Route                \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Transport  |     Helicopter         |    "+malmoStockholm+"       \n" +
+                        " ----------|------------------------|-----------------------------\n" +
+                        "Passengers |     "+nrPassengers+"                  |                             \n" +
+                        "-----------|------------------------|-----------------------------\n" +
+                        "Price      |"+helicoptertotalCost+"                    |                             ");
                 break;
         }
     }
