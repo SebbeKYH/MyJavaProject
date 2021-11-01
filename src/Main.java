@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[]args) {
 
+        // Disclaimer. All comments for code is in starting point 10 (case10). The code is the same for all other
+        // cases
+
             //Introduction to the game and output design
             welcomeToTheGame();
 
