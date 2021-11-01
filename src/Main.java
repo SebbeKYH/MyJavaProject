@@ -52,7 +52,7 @@ public class Main {
             case 2:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startStockholm = new routeStart("Stockholm", 1000);
+                routeStart startStockholm = new routeStart("Stockholm", 1100);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startStockholm.routeStart + ".");
@@ -68,7 +68,7 @@ public class Main {
             case 3:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startVasteras = new routeStart("Västerås", 1000);
+                routeStart startVasteras = new routeStart("Västerås", 1200);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startVasteras.routeStart + ".");
@@ -84,7 +84,7 @@ public class Main {
             case 4:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startMolndal = new routeStart("Mölndal", 1000);
+                routeStart startMolndal = new routeStart("Mölndal", 1300);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startMolndal.routeStart + ".");
@@ -100,7 +100,7 @@ public class Main {
             case 5:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startKiruna = new routeStart("Kiruna", 1000);
+                routeStart startKiruna = new routeStart("Kiruna", 1400);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startKiruna.routeStart + ".");
@@ -116,7 +116,7 @@ public class Main {
             case 6:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startSkara = new routeStart("Skara", 1000);
+                routeStart startSkara = new routeStart("Skara", 1500);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startSkara.routeStart + ".");
@@ -132,7 +132,7 @@ public class Main {
             case 7:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startLulea = new routeStart("Luleå", 1000);
+                routeStart startLulea = new routeStart("Luleå", 1600);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startLulea.routeStart + ".");
@@ -148,7 +148,7 @@ public class Main {
             case 8:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startMaglehem = new routeStart("Maglehem", 1000);
+                routeStart startMaglehem = new routeStart("Maglehem", 1700);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startMaglehem.routeStart + ".");
@@ -164,7 +164,7 @@ public class Main {
             case 9:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startStehag = new routeStart("Stehag", 1000);
+                routeStart startStehag = new routeStart("Stehag", 1800);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startStehag.routeStart + ".");
@@ -180,7 +180,7 @@ public class Main {
             case 10:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startEslov = new routeStart("Eslöv", 1000);
+                routeStart startEslov = new routeStart("Eslöv", 1900);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startEslov.routeStart + ".");
