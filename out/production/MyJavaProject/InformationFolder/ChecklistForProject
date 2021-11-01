@@ -7,10 +7,11 @@
 * Discounts for different kinds of combination  SOMEWHAT
 * FileReader for output     DONE
 * Not go to the same destination as start   DONE
-* Textfile and fileWriter to update template
-* MENU back if user regrets
-* Try to make read file method
-* Try to make scanner method
+* Textfile and fileWriter to update template    NO
+* MENU back if user regrets     NO
+* Try to make read file method          DONE
+* Try to make scanner method            DONE
+* Try to make passenger type as method
 
 - StartCost should be 1000
 - DestinationCost should be less
