@@ -196,45 +196,60 @@ public class Main {
     private static void case10Destinations(Scanner passengers, routeStart startEslov, Scanner case10scan) {
         switch (case10scan.nextInt()) {
             case 1:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination1(passengers, startEslov);
                 break;
             case 2:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination2(passengers, startEslov);
                 break;
             case 3:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination3(passengers, startEslov);
                 break;
             case 4:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination4(passengers, startEslov);
                 break;
             case 5:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination5(passengers, startEslov);
                 break;
             case 6:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination6(passengers, startEslov);
                 break;
             case 7:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination7(passengers, startEslov);
                 break;
             case 8:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination8(passengers, startEslov);
                 break;
             case 9:
+                //Switch cases for different destination with starting point at Eslöv
                 case10Destination9(passengers, startEslov);
                 break;
             case 10:
+                // You cant choose the same destination as starting point
                 System.out.println("You cant have the same destination as starting point.");
                 break;
         }
     }
 
     private static void case10Destination9(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationStehag = new routeDestination("Stehag", 450);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovStehag= startEslov.routeStart +"----->"
                 +destinationStehag.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovStehag);
 
         //Read and display transport alternatives
@@ -245,11 +260,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovStehagCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovStehagCost);
                 System.out.println(totalCost);
 
@@ -258,11 +282,20 @@ public class Main {
                 break;
 
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovStehagCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovStehagCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -270,11 +303,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Stehag", 450);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovStehagCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -285,12 +327,17 @@ public class Main {
     }
 
     private static void case10Destination8(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovMaglehem= startEslov.routeStart +"----->"
                 +destinationMaglehem.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovMaglehem);
 
         //Read and display transport alternatives
@@ -301,11 +348,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovMaglehemCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovMaglehemCost);
                 System.out.println(totalCost);
 
@@ -313,11 +369,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Maglehem", 400);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovMaglehemCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovMaglehemCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -325,11 +390,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Maglehem", 400);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovMaglehemCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMaglehemCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -340,12 +414,17 @@ public class Main {
     }
 
     private static void case10Destination7(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationLulea = new routeDestination("Luleå", 350);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovLulea= startEslov.routeStart +"----->"
                 +destinationLulea.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovLulea);
 
         //Read and display transport alternatives
@@ -356,11 +435,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovLuleaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovLuleaCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -368,11 +456,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Luleå", 350);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovLuleaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovLuleaCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -380,11 +477,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Luleå", 350);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovLuleaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovLuleaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -395,12 +501,17 @@ public class Main {
     }
 
     private static void case10Destination6(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationSkara = new routeDestination("Skara", 300);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovSkara= startEslov.routeStart +"----->"
                 +destinationSkara.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovSkara);
 
         //Read and display transport alternatives
@@ -411,11 +522,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovSkaraCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovSkaraCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -423,11 +543,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Skara", 300);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovSkaraCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovSkaraCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -435,11 +564,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Skara", 300);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovSkaraCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovSkaraCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -450,12 +588,17 @@ public class Main {
     }
 
     private static void case10Destination5(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovKiruna= startEslov.routeStart +"----->"
                 +destinationKiruna.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovKiruna);
 
         //Read and display transport alternatives
@@ -466,11 +609,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovKirunaCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovKirunaCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -478,11 +630,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Kiruna", 250);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovKirunaCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovKirunaCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -490,11 +651,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Kiruna", 250);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovKirunaCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovKirunaCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -505,12 +675,17 @@ public class Main {
     }
 
     private static void case10Destination4(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovMolndal= startEslov.routeStart +"----->"
                 +destinationMolndal.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovMolndal);
 
         //Read and display transport alternatives
@@ -521,11 +696,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovMolndalCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovMolndalCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -533,11 +717,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Mölndal", 200);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovMolndalCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovMolndalCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -545,11 +738,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Mölndal", 200);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovMolndalCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMolndalCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -560,12 +762,17 @@ public class Main {
     }
 
     private static void case10Destination3(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovVasteras= startEslov.routeStart +"----->"
                 +destinationVasteras.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovVasteras);
 
         //Read and display transport alternatives
@@ -576,11 +783,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovVasterasCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovVasterasCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -588,11 +804,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Västerås", 150);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovVasterasCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovVasterasCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -600,11 +825,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Västerås", 150);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovVasterasCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovVasterasCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -615,12 +849,17 @@ public class Main {
     }
 
     private static void case10Destination2(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovStockholm= startEslov.routeStart +"----->"
                 +destinationStockholm.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovStockholm);
 
         //Read and display transport alternatives
@@ -631,23 +870,41 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovStockholmCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovStockholmCost);
-                System.out.println("your total cost is: "+totalCost+" kr");
+                System.out.println("Your total cost is: "+totalCost+" kr");
 
                 //Do you want to buy your ticket?
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Stockholm", 100);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovStockholmCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovStockholmCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -655,11 +912,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Stockholm", 100);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovStockholmCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStockholmCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -670,12 +936,17 @@ public class Main {
     }
 
     private static void case10Destination1(Scanner passengers, routeStart startEslov) {
+        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+        // the cost of a route.
         routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+        // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
+        // Creates string variable that contains the route from start to destination.
         String eslovMalmo= startEslov.routeStart +"----->"
                 +destinationMalmo.routeDestination;
+        // Informs the user of the selected route
         System.out.println(eslovMalmo);
 
         //Read and display transport alternatives
@@ -686,11 +957,20 @@ public class Main {
 
         switch (transportationScan.nextInt()){
             case 1:
+                // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by train + destination cost).
                 int eslovMalmoCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int totalCost = (passengers.nextInt()*eslovMalmoCost);
                 System.out.println("your total cost is: "+totalCost+" kr");
 
@@ -698,11 +978,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 2:
+                // Informs the user of what kind of transportation was chosen. In this case the bus
                 System.out.println("You chose to go by bus");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport bus = new routeTransport("Bus",75,"Malmö", 50);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
                 int buseslovMalmoCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int bustotalCost = (passengers.nextInt()*buseslovMalmoCost);
                 System.out.println("Your total cost is: "+bustotalCost+" kr");
 
@@ -710,11 +999,20 @@ public class Main {
                 buyTicket(transportationScan);
                 break;
             case 3:
+                // Informs the user of what kind of transportation was chosen. In this case the helicopter
                 System.out.println("You chose to go by helicopter");
+                // A new route object is created from routeTransport class since
+                // we know the starting point and destination. In it the kind of transportation is also given
+                // a cost to be able to calculate different cost for different transport alternatives.
                 routeTransport helicopter = new routeTransport("Helicopter",25,"Malmö", 50);
+                // Create integer variable for the route cost in relation till transport alternative.
+                // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
                 int helicoptereslovMalmoCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
+                // Total cost for transport alternative on that route is multiplied with number of passengers
+                // and gives to total cost which is printed
                 int helicoptertotalCost = (passengers.nextInt()*helicoptereslovMalmoCost);
                 System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
 
@@ -5499,26 +5797,35 @@ public class Main {
     private static void buyTicket(Scanner transportationScan) {
         //Do you want to but the ticket?
         System.out.println("Would you like to by your tiket y/n ?");
+        // User input i saved in buyTicket
         String buyTicket = transportationScan.next();
+        // If user types Y a message will be recieved that the purchase has been succesful
         if (buyTicket.equalsIgnoreCase("y")) {
             System.out.println("Congratulations, you have bought the ticket. Have a pleasant journey");
-        } else {
+        }
+        // Else there is a goodbye message and the program stops.
+        else {
             System.out.println("Welcome back another time");
         }
     }
 
     private static Scanner transportScanner() {
+        // Ask the user to input integer to choose transport alternatives
         System.out.println("Choose transportation alternative: ");
         Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
         System.out.print(">");
         return transportationScan;
     }
 
     private static void readTransportAlternatives() {
-        //Read transportFile
+        // Create file object from file "transportAlternatives
         File transportAlternatives = new File("./src/InformationFolder/transportAlternatives");
+        //Create try catch to be able to catch error of file is not found
         try {
+            //Create new scanner object "transportScanner" that reads "transportAlternatives"
             Scanner transportScanner = new Scanner(transportAlternatives);
+            // While the File has a new line the scanner will read it and print it.
             while (transportScanner.hasNextLine()) {
                 System.out.println(transportScanner.nextLine());
             }
@@ -5531,7 +5838,7 @@ public class Main {
     private static void travelFrom() {
         //Create file object from file "routeStart"
         File startFile = new File("./src/InformationFolder/routeStart");
-        //Create try catch to be able to catch error i file is not found
+        //Create try catch to be able to catch error if file is not found
         try {
             //Create new scanner object "routeScanner" that reads "routeFile"
             Scanner routeScanner = new Scanner(startFile);
