@@ -1,10 +1,10 @@
-public class routeDestination {
+public class routeDestinations {
     //Declaring class variables
-    public String routeDestination;
-    public int destinationCost;
+    public static String routeDestination;
+    public static int destinationCost;
 
-    public routeDestination(String inRouteDestination,
-                      int inDestinationCost){
+    public routeDestinations(String inRouteDestination,
+                             int inDestinationCost){
         routeDestination=inRouteDestination;
         destinationCost=inDestinationCost;
     }

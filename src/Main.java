@@ -18,7 +18,7 @@ public class Main {
             makingChoices();
     }
 
-    private static void makingChoices() {
+    public static void makingChoices() {
         //Create scanner object for passengers used later in code.
         Scanner passengers = new Scanner (System.in);
 
@@ -26,7 +26,7 @@ public class Main {
         chooseStartingPoint(passengers);
     }
 
-    private static void chooseStartingPoint(Scanner passengers) {
+    public static void chooseStartingPoint(Scanner passengers) {
         //Creating scanner object for choosing starting point with integer numbers for switch case
         Scanner fromScan = new Scanner(System.in);
         // Enter integer to choose case
@@ -36,7 +36,7 @@ public class Main {
             case 1:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startMalmo = new routeStart("Malmö", 1000);
+                routeStarter startMalmo = new routeStarter("Malmö", 1000);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startMalmo.routeStart + ".");
@@ -52,7 +52,7 @@ public class Main {
             case 2:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startStockholm = new routeStart("Stockholm", 1100);
+                routeStarter startStockholm = new routeStarter("Stockholm", 1100);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startStockholm.routeStart + ".");
@@ -68,7 +68,7 @@ public class Main {
             case 3:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startVasteras = new routeStart("Västerås", 1200);
+                routeStarter startVasteras = new routeStarter("Västerås", 1200);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startVasteras.routeStart + ".");
@@ -84,7 +84,7 @@ public class Main {
             case 4:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startMolndal = new routeStart("Mölndal", 1300);
+                routeStarter startMolndal = new routeStarter("Mölndal", 1300);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startMolndal.routeStart + ".");
@@ -100,7 +100,7 @@ public class Main {
             case 5:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startKiruna = new routeStart("Kiruna", 1400);
+                routeStarter startKiruna = new routeStarter("Kiruna", 1400);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startKiruna.routeStart + ".");
@@ -116,7 +116,7 @@ public class Main {
             case 6:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startSkara = new routeStart("Skara", 1500);
+                routeStarter startSkara = new routeStarter("Skara", 1500);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startSkara.routeStart + ".");
@@ -132,7 +132,7 @@ public class Main {
             case 7:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startLulea = new routeStart("Luleå", 1600);
+                routeStarter startLulea = new routeStarter("Luleå", 1600);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startLulea.routeStart + ".");
@@ -148,7 +148,7 @@ public class Main {
             case 8:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startMaglehem = new routeStart("Maglehem", 1700);
+                routeStarter startMaglehem = new routeStarter("Maglehem", 1700);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startMaglehem.routeStart + ".");
@@ -164,7 +164,7 @@ public class Main {
             case 9:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startStehag = new routeStart("Stehag", 1800);
+                routeStarter startStehag = new routeStarter("Stehag", 1800);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startStehag.routeStart + ".");
@@ -180,7 +180,7 @@ public class Main {
             case 10:
                 // Create new object from class routeStar. It gets an initial cost used later to determine the
                 // cost for travel between different destinations
-                routeStart startEslov = new routeStart("Eslöv", 1900);
+                routeStarter startEslov = new routeStarter("Eslöv", 1900);
                 //Informs the user of what starting point has been chosen
                 System.out.println("You chose to start from "
                         + startEslov.routeStart + ".");
@@ -196,7 +196,7 @@ public class Main {
         }
     }
 
-    private static void case10Destinations(Scanner passengers, routeStart startEslov, Scanner case10scan) {
+    public static void case10Destinations(Scanner passengers, routeStarter startEslov, Scanner case10scan) {
         switch (case10scan.nextInt()) {
             case 1:
                 //Switch cases for different destination with starting point at Eslöv
@@ -241,10 +241,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination9(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination9(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
@@ -329,10 +329,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination8(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination8(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
@@ -416,10 +416,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination7(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination7(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
@@ -503,10 +503,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination6(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination6(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
@@ -590,10 +590,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination5(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination5(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
@@ -677,10 +677,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination4(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination4(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
@@ -764,10 +764,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination3(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination3(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
@@ -851,10 +851,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination2(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination2(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
@@ -938,10 +938,10 @@ public class Main {
         }
     }
 
-    private static void case10Destination1(Scanner passengers, routeStart startEslov) {
+    public static void case10Destination1(Scanner passengers, routeStarter startEslov) {
         // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
         // the cost of a route.
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         // Informs the user of the chosen destination
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
@@ -1025,7 +1025,7 @@ public class Main {
         }
     }
 
-    private static void case9Destinations(Scanner passengers, routeStart startStehag, Scanner case9scan) {
+    public static void case9Destinations(Scanner passengers, routeStarter startStehag, Scanner case9scan) {
         switch (case9scan.nextInt()) {
             case 1:
                 case9Destination1(passengers, startStehag);
@@ -1060,8 +1060,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination10(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case9Destination10(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -1115,8 +1115,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination8(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case9Destination8(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -1170,8 +1170,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination7(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case9Destination7(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -1225,8 +1225,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination6(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case9Destination6(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -1280,8 +1280,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination5(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case9Destination5(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -1335,8 +1335,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination4(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case9Destination4(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -1390,8 +1390,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination3(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case9Destination3(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -1445,8 +1445,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination2(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case9Destination2(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -1500,8 +1500,8 @@ public class Main {
         }
     }
 
-    private static void case9Destination1(Scanner passengers, routeStart startStehag) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case9Destination1(Scanner passengers, routeStarter startStehag) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -1555,7 +1555,7 @@ public class Main {
         }
     }
 
-    private static void case8Destinations(Scanner passengers, routeStart startMaglehem, Scanner case8scan) {
+    public static void case8Destinations(Scanner passengers, routeStarter startMaglehem, Scanner case8scan) {
         switch (case8scan.nextInt()) {
             case 1:
                 case8Destination1(passengers, startMaglehem);
@@ -1590,8 +1590,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination10(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case8Destination10(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -1645,8 +1645,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination9(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case8Destination9(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -1700,8 +1700,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination7(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case8Destination7(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -1755,8 +1755,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination6(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case8Destination6(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -1810,8 +1810,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination5(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case8Destination5(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -1865,8 +1865,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination4(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case8Destination4(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -1920,8 +1920,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination3(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case8Destination3(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -1975,8 +1975,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination2(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case8Destination2(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -2030,8 +2030,8 @@ public class Main {
         }
     }
 
-    private static void case8Destination1(Scanner passengers, routeStart startMaglehem) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case8Destination1(Scanner passengers, routeStarter startMaglehem) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -2085,7 +2085,7 @@ public class Main {
         }
     }
 
-    private static void case7Destinations(Scanner passengers, routeStart startLulea, Scanner case7scan) {
+    public static void case7Destinations(Scanner passengers, routeStarter startLulea, Scanner case7scan) {
         switch (case7scan.nextInt()) {
             case 1:
                 case7Destination1(passengers, startLulea);
@@ -2120,8 +2120,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination10(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case7Destination10(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -2175,8 +2175,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination9(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case7Destination9(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -2230,8 +2230,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination8(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case7Destination8(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -2285,8 +2285,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination6(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case7Destination6(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -2340,8 +2340,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination5(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case7Destination5(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -2395,8 +2395,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination4(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case7Destination4(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -2450,8 +2450,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination3(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case7Destination3(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -2505,8 +2505,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination2(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case7Destination2(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -2560,8 +2560,8 @@ public class Main {
         }
     }
 
-    private static void case7Destination1(Scanner passengers, routeStart startLulea) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case7Destination1(Scanner passengers, routeStarter startLulea) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -2615,7 +2615,7 @@ public class Main {
         }
     }
 
-    private static void case6Destinations(Scanner passengers, routeStart startSkara, Scanner case6scan) {
+    public static void case6Destinations(Scanner passengers, routeStarter startSkara, Scanner case6scan) {
         switch (case6scan.nextInt()) {
             case 1:
                 case6Destination1(passengers, startSkara);
@@ -2650,8 +2650,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination10(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case6Destination10(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -2705,8 +2705,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination9(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case6Destination9(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -2760,8 +2760,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination8(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case6Destination8(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -2815,8 +2815,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination7(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case6Destination7(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -2870,8 +2870,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination5(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case6Destination5(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -2925,8 +2925,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination4(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case6Destination4(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -2980,8 +2980,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination3(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case6Destination3(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -3035,8 +3035,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination2(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case6Destination2(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -3090,8 +3090,8 @@ public class Main {
         }
     }
 
-    private static void case6Destination1(Scanner passengers, routeStart startSkara) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case6Destination1(Scanner passengers, routeStarter startSkara) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -3145,7 +3145,7 @@ public class Main {
         }
     }
 
-    private static void case5Destinations(Scanner passengers, routeStart startKiruna, Scanner case5scan) {
+    public static void case5Destinations(Scanner passengers, routeStarter startKiruna, Scanner case5scan) {
         switch (case5scan.nextInt()) {
             case 1:
                 case5Destination1(passengers, startKiruna);
@@ -3180,8 +3180,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination10(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case5Destination10(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -3235,8 +3235,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination9(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case5Destination9(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -3290,8 +3290,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination8(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case5Destination8(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -3345,8 +3345,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination7(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case5Destination7(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -3400,8 +3400,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination6(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case5Destination6(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -3455,8 +3455,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination4(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case5Destination4(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -3510,8 +3510,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination3(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case5Destination3(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -3565,8 +3565,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination2(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case5Destination2(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -3620,8 +3620,8 @@ public class Main {
         }
     }
 
-    private static void case5Destination1(Scanner passengers, routeStart startKiruna) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case5Destination1(Scanner passengers, routeStarter startKiruna) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -3675,7 +3675,7 @@ public class Main {
         }
     }
 
-    private static void case4Destinations(Scanner passengers, routeStart startMolndal, Scanner case4scan) {
+    public static void case4Destinations(Scanner passengers, routeStarter startMolndal, Scanner case4scan) {
         switch (case4scan.nextInt()) {
             case 1:
                 case4Destination1(passengers, startMolndal);
@@ -3710,8 +3710,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination10(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case4Destination10(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -3765,8 +3765,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination9(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case4Destination9(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -3820,8 +3820,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination8(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case4Destination8(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -3875,8 +3875,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination7(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case4Destination7(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -3930,8 +3930,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination6(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case4Destination6(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -3985,8 +3985,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination5(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case4Destination5(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -4040,8 +4040,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination3(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case4Destination3(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -4095,8 +4095,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination2(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case4Destination2(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -4150,8 +4150,8 @@ public class Main {
         }
     }
 
-    private static void case4Destination1(Scanner passengers, routeStart startMolndal) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case4Destination1(Scanner passengers, routeStarter startMolndal) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -4206,7 +4206,7 @@ public class Main {
         }
     }
 
-    private static void case3Destinations(Scanner passengers, routeStart startVasteras, Scanner case3scan) {
+    public static void case3Destinations(Scanner passengers, routeStarter startVasteras, Scanner case3scan) {
         switch (case3scan.nextInt()) {
             case 1:
                 case3Destination1(passengers, startVasteras);
@@ -4241,8 +4241,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination10(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case3Destination10(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -4296,8 +4296,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination9(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case3Destination9(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -4351,8 +4351,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination8(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case3Destination8(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -4406,8 +4406,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination7(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case3Destination7(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -4461,8 +4461,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination6(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case3Destination6(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -4516,8 +4516,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination5(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case3Destination5(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -4571,8 +4571,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination4(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case3Destination4(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -4626,8 +4626,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination2(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case3Destination2(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
         System.out.println("You chose to travel to "
                 + destinationStockholm.routeDestination + ".");
         System.out.println("\n");
@@ -4681,8 +4681,8 @@ public class Main {
         }
     }
 
-    private static void case3Destination1(Scanner passengers, routeStart startVasteras) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case3Destination1(Scanner passengers, routeStarter startVasteras) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -4736,7 +4736,7 @@ public class Main {
         }
     }
 
-    private static void case2Destinations(Scanner passengers, routeStart startStockholm, Scanner case2scan) {
+    public static void case2Destinations(Scanner passengers, routeStarter startStockholm, Scanner case2scan) {
         switch (case2scan.nextInt()) {
             case 1:
                 case2Destination1(passengers, startStockholm);
@@ -4771,8 +4771,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination10(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case2Destination10(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -4826,8 +4826,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination9(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case2Destination9(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -4881,8 +4881,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination8(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case2Destination8(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -4936,8 +4936,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination7(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case2Destination7(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -4991,8 +4991,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination6(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case2Destination6(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -5046,8 +5046,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination5(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case2Destination5(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -5101,8 +5101,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination4(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case2Destination4(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -5156,8 +5156,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination3(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case2Destination3(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -5211,8 +5211,8 @@ public class Main {
         }
     }
 
-    private static void case2Destination1(Scanner passengers, routeStart startStockholm) {
-        routeDestination destinationMalmo = new routeDestination("Malmö", 50);
+    public static void case2Destination1(Scanner passengers, routeStarter startStockholm) {
+        routeDestinations destinationMalmo = new routeDestinations("Malmö", 50);
         System.out.println("You chose to travel to "
                 + destinationMalmo.routeDestination + ".");
         System.out.println("\n");
@@ -5266,7 +5266,7 @@ public class Main {
         }
     }
 
-    private static void case1Destinations(Scanner passengers, routeStart startMalmo, Scanner case1scan) {
+    public static void case1Destinations(Scanner passengers, routeStarter startMalmo, Scanner case1scan) {
         switch (case1scan.nextInt()) {
             case 1:
                 System.out.println("You cant have the same destination as starting point.");
@@ -5301,8 +5301,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination10(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationEslov = new routeDestination("Eslöv", 500);
+    public static void case1Destination10(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationEslov = new routeDestinations("Eslöv", 500);
         System.out.println("You chose to travel to "
                 + destinationEslov.routeDestination + ".");
         System.out.println("\n");
@@ -5356,8 +5356,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination9(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationStehag = new routeDestination("Stehag", 450);
+    public static void case1Destination9(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
         System.out.println("You chose to travel to "
                 + destinationStehag.routeDestination + ".");
         System.out.println("\n");
@@ -5411,8 +5411,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination8(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationMaglehem = new routeDestination("Maglehem", 400);
+    public static void case1Destination8(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationMaglehem = new routeDestinations("Maglehem", 400);
         System.out.println("You chose to travel to "
                 + destinationMaglehem.routeDestination + ".");
         System.out.println("\n");
@@ -5466,8 +5466,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination7(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationLulea = new routeDestination("Luleå", 350);
+    public static void case1Destination7(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationLulea = new routeDestinations("Luleå", 350);
         System.out.println("You chose to travel to "
                 + destinationLulea.routeDestination + ".");
         System.out.println("\n");
@@ -5521,8 +5521,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination6(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationSkara = new routeDestination("Skara", 300);
+    public static void case1Destination6(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationSkara = new routeDestinations("Skara", 300);
         System.out.println("You chose to travel to "
                 + destinationSkara.routeDestination + ".");
         System.out.println("\n");
@@ -5576,8 +5576,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination5(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationKiruna = new routeDestination("Kiruna", 250);
+    public static void case1Destination5(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationKiruna = new routeDestinations("Kiruna", 250);
         System.out.println("You chose to travel to "
                 + destinationKiruna.routeDestination + ".");
         System.out.println("\n");
@@ -5631,8 +5631,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination4(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationMolndal = new routeDestination("Mölndal", 200);
+    public static void case1Destination4(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationMolndal = new routeDestinations("Mölndal", 200);
         System.out.println("You chose to travel to "
                 + destinationMolndal.routeDestination + ".");
         System.out.println("\n");
@@ -5686,8 +5686,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination3(Scanner passengers, routeStart startMalmo) {
-        routeDestination destinationVasteras = new routeDestination("Västerås", 150);
+    public static void case1Destination3(Scanner passengers, routeStarter startMalmo) {
+        routeDestinations destinationVasteras = new routeDestinations("Västerås", 150);
         System.out.println("You chose to travel to "
                 + destinationVasteras.routeDestination + ".");
         System.out.println("\n");
@@ -5741,8 +5741,8 @@ public class Main {
         }
     }
 
-    private static void case1Destination2(Scanner passengers, routeStart startMalmo){
-            routeDestination destinationStockholm = new routeDestination("Stockholm", 100);
+    public static void case1Destination2(Scanner passengers, routeStarter startMalmo){
+            routeDestinations destinationStockholm = new routeDestinations("Stockholm", 100);
             System.out.println("You chose to travel to "
                     + destinationStockholm.routeDestination + ".");
             System.out.println("\n");
@@ -5792,27 +5792,23 @@ public class Main {
                     System.out.println("Your total cost is: " + helicoptertotalCost + " kr");
 
                     //Do you want to buy your ticket?
-                    buyTicket(transportationScan);
+                    //Do you want to but the ticket?
+                    System.out.println("Would you like to by your tiket y/n ?");
+                    // User input i saved in buyTicket
+                    String buyTicket = transportationScan.next();
                     break;
             }
     }
 
-    private static void buyTicket(Scanner transportationScan) {
+    public static void buyTicket(Scanner transportationScan) {
         //Do you want to but the ticket?
         System.out.println("Would you like to by your tiket y/n ?");
         // User input i saved in buyTicket
         String buyTicket = transportationScan.next();
-        // If user types Y a message will be recieved that the purchase has been succesful
-        if (buyTicket.equalsIgnoreCase("y")) {
-            System.out.println("Congratulations, you have bought the ticket. Have a pleasant journey");
-        }
-        // Else there is a goodbye message and the program stops.
-        else {
-            System.out.println("Welcome back another time");
-        }
+        //WHAT HAPPENDS WHEN YOU BUY A TICKET?
     }
 
-    private static Scanner transportScanner() {
+    public static Scanner transportScanner() {
         // Ask the user to input integer to choose transport alternatives
         System.out.println("Choose transportation alternative: ");
         Scanner transportationScan = new Scanner(System.in);
@@ -5821,7 +5817,7 @@ public class Main {
         return transportationScan;
     }
 
-    private static void readTransportAlternatives() {
+    public static void readTransportAlternatives() {
         // Create file object from file "transportAlternatives
         File transportAlternatives = new File("./src/InformationFolder/transportAlternatives");
         //Create try catch to be able to catch error of file is not found
@@ -5838,7 +5834,7 @@ public class Main {
         }
     }
 
-    private static void travelFrom() {
+    public static void travelFrom() {
         //Create file object from file "routeStart"
         File startFile = new File("./src/InformationFolder/routeStart");
         //Create try catch to be able to catch error if file is not found
@@ -5856,7 +5852,7 @@ public class Main {
         }
     }
 
-    private static void welcomeToTheGame() {
+    public static void welcomeToTheGame() {
         //Create file object from file "welcome text"
         File welcomeFile = new File("./src/InformationFolder/welcomeText");
         //Create try catch to be able to catch error if file is not found

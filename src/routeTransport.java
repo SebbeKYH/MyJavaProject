@@ -1,6 +1,6 @@
-public class routeTransport extends routeDestination {
-    public String transportType;
-    public int transportCost;
+public class routeTransport extends routeDestinations {
+    public static String transportType;
+    public static int transportCost;
     public routeTransport (String inTransportType, int inTransportCost,
                            String inRouteDestination, int inDestinationCost){
         super(inRouteDestination, inDestinationCost);
