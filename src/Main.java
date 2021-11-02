@@ -1,200 +1,206 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[]args) {
+    public static void main(String[] args) {
 
         // Disclaimer. All comments for code is in starting point 10 (case10). The code is the same for all other
         // cases
 
-            //Introduction to the game and output design
-            welcomeToTheGame();
+        //Introduction to the game and output design
+        welcomeToTheGame();
 
-            //Displays travel options from textFile
-            travelFrom();
+        //Displays travel options from textFile
+        travelFrom();
 
-            //Make choices for travel
-            makingChoices();
+        //Make choices for travel
+        makingChoices();
     }
 
     public static void makingChoices() {
         //Create scanner object for passengers used later in code.
-        Scanner passengers = new Scanner (System.in);
+        Scanner passengers = new Scanner(System.in);
 
         //Choosing starting point for travellers
         chooseStartingPoint(passengers);
     }
 
     public static void chooseStartingPoint(Scanner passengers) {
-        //Creating scanner object for choosing starting point with integer numbers for switch case
-        Scanner fromScan = new Scanner(System.in);
-        // Enter integer to choose case
-        System.out.print(">");
+        try {
+            //Creating scanner object for choosing starting point with integer numbers for switch case
+            Scanner fromScan = new Scanner(System.in);
+            // Enter integer to choose case
+            System.out.print("> ");
 
-        switch (fromScan.nextInt()) {
-            case 1:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startMalmo = new routeStarter("Malmö", 1000);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startMalmo.routeStart + ".");
+                switch (fromScan.nextInt()) {
+                    case 1:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startMalmo = new routeStarter("Malmö", 1000);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startMalmo.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case1scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case1scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case1Destinations(passengers, startMalmo, case1scan);
-                break;
-            case 2:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startStockholm = new routeStarter("Stockholm", 1100);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startStockholm.routeStart + ".");
+                        // Switch cases for destination...
+                        case1Destinations(passengers, startMalmo, case1scan);
+                        break;
+                    case 2:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startStockholm = new routeStarter("Stockholm", 1100);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startStockholm.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case2scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case2scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case2Destinations(passengers, startStockholm, case2scan);
-                break;
-            case 3:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startVasteras = new routeStarter("Västerås", 1200);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startVasteras.routeStart + ".");
+                        // Switch cases for destination...
+                        case2Destinations(passengers, startStockholm, case2scan);
+                        break;
+                    case 3:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startVasteras = new routeStarter("Västerås", 1200);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startVasteras.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case3scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case3scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case3Destinations(passengers, startVasteras, case3scan);
-                break;
-            case 4:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startMolndal = new routeStarter("Mölndal", 1300);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startMolndal.routeStart + ".");
+                        // Switch cases for destination...
+                        case3Destinations(passengers, startVasteras, case3scan);
+                        break;
+                    case 4:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startMolndal = new routeStarter("Mölndal", 1300);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startMolndal.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case4scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case4scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case4Destinations(passengers, startMolndal, case4scan);
-                break;
-            case 5:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startKiruna = new routeStarter("Kiruna", 1400);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startKiruna.routeStart + ".");
+                        // Switch cases for destination...
+                        case4Destinations(passengers, startMolndal, case4scan);
+                        break;
+                    case 5:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startKiruna = new routeStarter("Kiruna", 1400);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startKiruna.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case5scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case5scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case5Destinations(passengers, startKiruna, case5scan);
-                break;
-            case 6:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startSkara = new routeStarter("Skara", 1500);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startSkara.routeStart + ".");
+                        // Switch cases for destination...
+                        case5Destinations(passengers, startKiruna, case5scan);
+                        break;
+                    case 6:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startSkara = new routeStarter("Skara", 1500);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startSkara.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case6scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case6scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case6Destinations(passengers, startSkara, case6scan);
-                break;
-            case 7:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startLulea = new routeStarter("Luleå", 1600);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startLulea.routeStart + ".");
+                        // Switch cases for destination...
+                        case6Destinations(passengers, startSkara, case6scan);
+                        break;
+                    case 7:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startLulea = new routeStarter("Luleå", 1600);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startLulea.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case7scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case7scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case7Destinations(passengers, startLulea, case7scan);
-                break;
-            case 8:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startMaglehem = new routeStarter("Maglehem", 1700);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startMaglehem.routeStart + ".");
+                        // Switch cases for destination...
+                        case7Destinations(passengers, startLulea, case7scan);
+                        break;
+                    case 8:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startMaglehem = new routeStarter("Maglehem", 1700);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startMaglehem.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case8scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case8scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case8Destinations(passengers, startMaglehem, case8scan);
-                break;
-            case 9:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startStehag = new routeStarter("Stehag", 1800);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startStehag.routeStart + ".");
+                        // Switch cases for destination...
+                        case8Destinations(passengers, startMaglehem, case8scan);
+                        break;
+                    case 9:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startStehag = new routeStarter("Stehag", 1800);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startStehag.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case9scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case9scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case9Destinations(passengers, startStehag, case9scan);
-                break;
-            case 10:
-                // Create new object from class routeStar. It gets an initial cost used later to determine the
-                // cost for travel between different destinations
-                routeStarter startEslov = new routeStarter("Eslöv", 1900);
-                //Informs the user of what starting point has been chosen
-                System.out.println("You chose to start from "
-                        + startEslov.routeStart + ".");
+                        // Switch cases for destination...
+                        case9Destinations(passengers, startStehag, case9scan);
+                        break;
+                    case 10:
+                        // Create new object from class routeStar. It gets an initial cost used later to determine the
+                        // cost for travel between different destinations
+                        routeStarter startEslov = new routeStarter("Eslöv", 1900);
+                        //Informs the user of what starting point has been chosen
+                        System.out.println("You chose to start from "
+                                + startEslov.routeStart + ".");
 
-                //Create a new scanner object for choice of end destination trough switch case
-                System.out.println("Choose where you want to go.");
-                Scanner case10scan = new Scanner(System.in);
-                System.out.print(">");
+                        //Create a new scanner object for choice of end destination trough switch case
+                        System.out.println("Choose where you want to go.");
+                        Scanner case10scan = new Scanner(System.in);
+                        System.out.print(">");
 
-                // Switch cases for destination...
-                case10Destinations(passengers, startEslov, case10scan);
-                break;
+                        // Switch cases for destination...
+                        case10Destinations(passengers, startEslov, case10scan);
+                        break;
+                }
+            }
+        catch(InputMismatchException e){
+                System.out.println("ERROR. You have to make input in numbers. Check the information at the screen");
+            }
         }
-    }
 
     public static void case10Destinations(Scanner passengers, routeStarter startEslov, Scanner case10scan) {
         switch (case10scan.nextInt()) {
@@ -5805,7 +5811,12 @@ public class Main {
         System.out.println("Would you like to by your tiket y/n ?");
         // User input i saved in buyTicket
         String buyTicket = transportationScan.next();
-        //WHAT HAPPENDS WHEN YOU BUY A TICKET?
+        if(buyTicket.equalsIgnoreCase("y")){
+            System.out.println("Congratulations you have bought a ticket");
+        }
+        else{
+            System.out.println("Come again and make new travel arrangements");
+        }
     }
 
     public static Scanner transportScanner() {
