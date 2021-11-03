@@ -9,14 +9,29 @@ public class Main {
         // Disclaimer. All comments for code is in starting point 10 (case10). The code is the same for all other
         // cases
 
-        //Introduction to the game and output design
-        welcomeToTheGame();
+        boolean runTravelAgent =true;
+        while (runTravelAgent=true) {
 
-        //Displays travel options from textFile
-        travelFrom();
+            //Introduction to the game and output design
+            welcomeToTheGame();
 
-        //Make choices for travel
-        makingChoices();
+            //Displays travel options from textFile
+            travelFrom();
+
+            //Make choices for travel
+            makingChoices();
+
+            Scanner choiceScan = new Scanner(System.in);
+            System.out.println("If you wish to exit the Travel assistant please enter quit");
+            System.out.print("> ");
+            String choice = choiceScan.next();
+            if(choice.equalsIgnoreCase("quit")){
+                runTravelAgent=false;
+            }
+            else{
+                runTravelAgent=true;
+            }
+        }
     }
 
     public static void makingChoices() {
