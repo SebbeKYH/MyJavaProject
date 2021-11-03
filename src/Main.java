@@ -1,36 +1,46 @@
+import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+
+    static boolean runTravelAgent =true;
+    static int transportChoice;
+
     public static void main(String[] args) {
 
         // Disclaimer. All comments for code is in starting point 10 (case10). The code is the same for all other
         // cases
+            while(runTravelAgent==true) {
+                //Introduction to the game and output design
+                welcomeToTheGame();
 
-        boolean runTravelAgent =true;
-        while (runTravelAgent=true) {
+                //Displays travel options from textFile
+                travelFrom();
 
-            //Introduction to the game and output design
-            welcomeToTheGame();
+                //Make choices for travel
+                makingChoices();
 
-            //Displays travel options from textFile
-            travelFrom();
-
-            //Make choices for travel
-            makingChoices();
-
-            Scanner choiceScan = new Scanner(System.in);
-            System.out.println("If you wish to exit the Travel assistant please enter quit");
-            System.out.print("> ");
-            String choice = choiceScan.next();
-            if(choice.equalsIgnoreCase("quit")){
-                runTravelAgent=false;
+                //Do you want to continue?
+                travelLoop();
             }
-            else{
-                runTravelAgent=true;
-            }
+
+    }
+
+    public static void travelLoop(){
+        System.out.println("Do you want to continue using the travel assistant?");
+        System.out.println("Yes");
+        System.out.println("No");
+        System.out.print("> ");
+        Scanner loopInput = new Scanner (System.in);
+        String loopChoice = loopInput.nextLine();
+        if(loopChoice.equalsIgnoreCase("yes")){
+            runTravelAgent=true;
+        }
+        else if(loopChoice.equalsIgnoreCase("no")){
+            runTravelAgent=false;
         }
     }
 
@@ -43,182 +53,220 @@ public class Main {
     }
 
     public static void chooseStartingPoint(Scanner passengers) {
-        try {
-            //Creating scanner object for choosing starting point with integer numbers for switch case
-            Scanner fromScan = new Scanner(System.in);
-            // Enter integer to choose case
-            System.out.print("> ");
-
-                switch (fromScan.nextInt()) {
-                    case 1:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startMalmo = new routeStarter("Malmö", 1000);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startMalmo.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case1scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case1Destinations(passengers, startMalmo, case1scan);
-                        break;
-                    case 2:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startStockholm = new routeStarter("Stockholm", 1100);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startStockholm.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case2scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case2Destinations(passengers, startStockholm, case2scan);
-                        break;
-                    case 3:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startVasteras = new routeStarter("Västerås", 1200);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startVasteras.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case3scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case3Destinations(passengers, startVasteras, case3scan);
-                        break;
-                    case 4:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startMolndal = new routeStarter("Mölndal", 1300);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startMolndal.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case4scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case4Destinations(passengers, startMolndal, case4scan);
-                        break;
-                    case 5:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startKiruna = new routeStarter("Kiruna", 1400);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startKiruna.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case5scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case5Destinations(passengers, startKiruna, case5scan);
-                        break;
-                    case 6:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startSkara = new routeStarter("Skara", 1500);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startSkara.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case6scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case6Destinations(passengers, startSkara, case6scan);
-                        break;
-                    case 7:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startLulea = new routeStarter("Luleå", 1600);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startLulea.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case7scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case7Destinations(passengers, startLulea, case7scan);
-                        break;
-                    case 8:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startMaglehem = new routeStarter("Maglehem", 1700);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startMaglehem.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case8scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case8Destinations(passengers, startMaglehem, case8scan);
-                        break;
-                    case 9:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startStehag = new routeStarter("Stehag", 1800);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startStehag.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case9scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case9Destinations(passengers, startStehag, case9scan);
-                        break;
-                    case 10:
-                        // Create new object from class routeStar. It gets an initial cost used later to determine the
-                        // cost for travel between different destinations
-                        routeStarter startEslov = new routeStarter("Eslöv", 1900);
-                        //Informs the user of what starting point has been chosen
-                        System.out.println("You chose to start from "
-                                + startEslov.routeStart + ".");
-
-                        //Create a new scanner object for choice of end destination trough switch case
-                        System.out.println("Choose where you want to go.");
-                        Scanner case10scan = new Scanner(System.in);
-                        System.out.print(">");
-
-                        // Switch cases for destination...
-                        case10Destinations(passengers, startEslov, case10scan);
-                        break;
+            try {
+                //Creating scanner object for choosing starting point with integer numbers for switch case
+                Scanner fromScan = new Scanner(System.in);
+                // Enter integer to choose case
+                System.out.print("> ");
+                int startInt = fromScan.nextInt();
+                if(startInt>10) {
+                    System.out.println("You have to choose a number within range.");
+                    runTravelAgent = false;
                 }
-            }
-        catch(InputMismatchException e){
+                    switch (startInt) {
+                        case 1:
+                                // Create new object from class routeStar. It gets an initial cost used later to determine the
+                                // cost for travel between different destinations
+                                routeStarter startMalmo = new routeStarter("Malmö", 1000);
+                                //Informs the user of what starting point has been chosen
+                                System.out.println("You chose to start from "
+                                        + startMalmo.routeStart + ".");
+
+                                //Display options on where to travel to
+                                travelTo();
+                                //Create a new scanner object for choice of end destination trough switch case
+                                System.out.println("Choose where you want to go.");
+                                Scanner case1scan = new Scanner(System.in);
+                                System.out.print(">");
+                                int dest1int=case1scan.nextInt();
+
+                                // Switch cases for destination...
+                                case1Destinations(passengers, startMalmo, dest1int);
+                            break;
+                        case 2:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startStockholm = new routeStarter("Stockholm", 1100);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startStockholm.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case2scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest2int=case2scan.nextInt();
+
+                            // Switch cases for destination...
+                            case2Destinations(passengers, startStockholm, dest2int);
+                            break;
+                        case 3:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startVasteras = new routeStarter("Västerås", 1200);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startVasteras.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case3scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest3int=case3scan.nextInt();
+
+                            // Switch cases for destination...
+                            case3Destinations(passengers, startVasteras, dest3int);
+                            break;
+                        case 4:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startMolndal = new routeStarter("Mölndal", 1300);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startMolndal.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case4scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest4int=case4scan.nextInt();
+
+                            // Switch cases for destination...
+                            case4Destinations(passengers, startMolndal, dest4int);
+                            break;
+                        case 5:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startKiruna = new routeStarter("Kiruna", 1400);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startKiruna.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case5scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest5int=case5scan.nextInt();
+
+                            // Switch cases for destination...
+                            case5Destinations(passengers, startKiruna, dest5int);
+                            break;
+                        case 6:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startSkara = new routeStarter("Skara", 1500);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startSkara.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case6scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest6int=case6scan.nextInt();
+
+                            // Switch cases for destination...
+                            case6Destinations(passengers, startSkara, dest6int);
+                            break;
+                        case 7:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startLulea = new routeStarter("Luleå", 1600);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startLulea.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case7scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest7int=case7scan.nextInt();
+
+                            // Switch cases for destination...
+                            case7Destinations(passengers, startLulea, dest7int);
+                            break;
+                        case 8:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startMaglehem = new routeStarter("Maglehem", 1700);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startMaglehem.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case8scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest8int=case8scan.nextInt();
+
+                            // Switch cases for destination...
+                            case8Destinations(passengers, startMaglehem, dest8int);
+                            break;
+                        case 9:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startStehag = new routeStarter("Stehag", 1800);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startStehag.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case9scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest9int=case9scan.nextInt();
+
+                            // Switch cases for destination...
+                            case9Destinations(passengers, startStehag, dest9int);
+                            break;
+                        case 10:
+                            // Create new object from class routeStar. It gets an initial cost used later to determine the
+                            // cost for travel between different destinations
+                            routeStarter startEslov = new routeStarter("Eslöv", 1900);
+                            //Informs the user of what starting point has been chosen
+                            System.out.println("You chose to start from "
+                                    + startEslov.routeStart + ".");
+
+                            //Display options on where to travel to
+                            travelTo();
+                            //Create a new scanner object for choice of end destination trough switch case
+                            System.out.println("Choose where you want to go.");
+                            Scanner case10scan = new Scanner(System.in);
+                            System.out.print(">");
+                            int dest10int=case10scan.nextInt();
+
+
+                            // Switch cases for destination...
+                            case10Destinations(passengers, startEslov, dest10int);
+                            break;
+                    }
+            } catch (InputMismatchException e) {
                 System.out.println("ERROR. You have to make input in numbers. Check the information at the screen");
             }
         }
 
-    public static void case10Destinations(Scanner passengers, routeStarter startEslov, Scanner case10scan) {
-        switch (case10scan.nextInt()) {
+    public static void case10Destinations(Scanner passengers, routeStarter startEslov, int dest10int) {
+        if(dest10int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest10int) {
             case 1:
                 //Switch cases for different destination with starting point at Eslöv
                 case10Destination1(passengers, startEslov);
@@ -263,42 +311,50 @@ public class Main {
     }
 
     public static void case10Destination9(Scanner passengers, routeStarter startEslov) {
-        // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
-        // the cost of a route.
-        routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
-        // Informs the user of the chosen destination
-        System.out.println("You chose to travel to "
-                + destinationStehag.routeDestination + ".");
-        System.out.println("\n");
-        // Creates string variable that contains the route from start to destination.
-        String eslovStehag= startEslov.routeStart +"----->"
-                +destinationStehag.routeDestination;
-        // Informs the user of the selected route
-        System.out.println(eslovStehag);
+            // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
+            // the cost of a route.
+            routeDestinations destinationStehag = new routeDestinations("Stehag", 450);
+            // Informs the user of the chosen destination
+            System.out.println("You chose to travel to "
+                    + destinationStehag.routeDestination + ".");
+            System.out.println("\n");
+
+            // Creates string variable that contains the route from start to destination.
+            String eslovStehag = startEslov.routeStart + "----->"
+                    + destinationStehag.routeDestination;
+            // Informs the user of the selected route
+            System.out.println(eslovStehag);
 
         //Read and display transport alternatives
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
                 // A new route object is created from routeTransport class since
                 // we know the starting point and destination. In it the kind of transportation is also given
                 // a cost to be able to calculate different cost for different transport alternatives.
-                routeTransport train = new routeTransport("Train",100,"Stehag", 450);
+                routeTransport train = new routeTransport("Train", 100, "Stehag", 450);
                 // Create integer variable for the route cost in relation till transport alternative.
                 // It is calculated by taking the starting cost -(cost of going by train + destination cost).
-                int eslovStehagCost=(startEslov.startCost-(train.transportCost + train.destinationCost));
+                int eslovStehagCost = (startEslov.startCost - (train.transportCost + train.destinationCost));
                 // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 // Total cost for transport alternative on that route is multiplied with number of passengers
                 // and gives to total cost which is printed
-                int totalCost = (passengers.nextInt()*eslovStehagCost);
+                int totalCost = (passengers.nextInt() * eslovStehagCost);
                 System.out.println(totalCost);
 
                 //Do you want to buy your ticket?
@@ -311,17 +367,17 @@ public class Main {
                 // A new route object is created from routeTransport class since
                 // we know the starting point and destination. In it the kind of transportation is also given
                 // a cost to be able to calculate different cost for different transport alternatives.
-                routeTransport bus = new routeTransport("Bus",75,"Stehag", 450);
+                routeTransport bus = new routeTransport("Bus", 75, "Stehag", 450);
                 // Create integer variable for the route cost in relation till transport alternative.
                 // It is calculated by taking the starting cost -(cost of going by bus + destination cost).
-                int buseslovStehagCost=(startEslov.startCost-(bus.transportCost + bus.destinationCost));
+                int buseslovStehagCost = (startEslov.startCost - (bus.transportCost + bus.destinationCost));
                 // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 // Total cost for transport alternative on that route is multiplied with number of passengers
                 // and gives to total cost which is printed
-                int bustotalCost = (passengers.nextInt()*buseslovStehagCost);
-                System.out.println("Your total cost is: "+bustotalCost+" kr");
+                int bustotalCost = (passengers.nextInt() * buseslovStehagCost);
+                System.out.println("Your total cost is: " + bustotalCost + " kr");
 
                 //Do you want to buy your ticket?
                 buyTicket(transportationScan);
@@ -332,17 +388,17 @@ public class Main {
                 // A new route object is created from routeTransport class since
                 // we know the starting point and destination. In it the kind of transportation is also given
                 // a cost to be able to calculate different cost for different transport alternatives.
-                routeTransport helicopter = new routeTransport("Helicopter",25,"Stehag", 450);
+                routeTransport helicopter = new routeTransport("Helicopter", 25, "Stehag", 450);
                 // Create integer variable for the route cost in relation till transport alternative.
                 // It is calculated by taking the starting cost -(cost of going by helicopter + destination cost).
-                int helicoptereslovStehagCost=(startEslov.startCost-(helicopter.transportCost + helicopter.destinationCost));
+                int helicoptereslovStehagCost = (startEslov.startCost - (helicopter.transportCost + helicopter.destinationCost));
                 // Ask the user how many passengers are traveling
                 System.out.println("How many passengers are traveling?");
                 System.out.print("> ");
                 // Total cost for transport alternative on that route is multiplied with number of passengers
                 // and gives to total cost which is printed
-                int helicoptertotalCost = (passengers.nextInt()*helicoptereslovStehagCost);
-                System.out.println("Your total cost is: "+helicoptertotalCost+" kr");
+                int helicoptertotalCost = (passengers.nextInt() * helicoptereslovStehagCost);
+                System.out.println("Your total cost is: " + helicoptertotalCost + " kr");
 
                 //Do you want to buy your ticket?
                 buyTicket(transportationScan);
@@ -368,9 +424,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -455,9 +518,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -542,9 +612,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -629,9 +706,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -716,9 +800,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -803,9 +894,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -890,9 +988,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -977,9 +1082,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 // Informs the user of what kind of transportation was chosen. In this case the train
                 System.out.println("You chose to go by train");
@@ -1046,8 +1158,12 @@ public class Main {
         }
     }
 
-    public static void case9Destinations(Scanner passengers, routeStarter startStehag, Scanner case9scan) {
-        switch (case9scan.nextInt()) {
+    public static void case9Destinations(Scanner passengers, routeStarter startStehag, int dest9int) {
+        if(dest9int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest9int) {
             case 1:
                 case9Destination1(passengers, startStehag);
                 break;
@@ -1094,9 +1210,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -1149,9 +1272,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -1204,9 +1334,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -1259,9 +1396,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -1314,9 +1458,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -1369,9 +1520,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -1424,9 +1582,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -1479,9 +1644,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -1534,9 +1706,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -1576,8 +1755,12 @@ public class Main {
         }
     }
 
-    public static void case8Destinations(Scanner passengers, routeStarter startMaglehem, Scanner case8scan) {
-        switch (case8scan.nextInt()) {
+    public static void case8Destinations(Scanner passengers, routeStarter startMaglehem, int dest8int) {
+        if(dest8int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest8int) {
             case 1:
                 case8Destination1(passengers, startMaglehem);
                 break;
@@ -1624,9 +1807,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -1679,9 +1869,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -1734,9 +1931,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -1789,9 +1993,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -1844,9 +2055,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -1899,9 +2117,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -1954,9 +2179,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -2009,9 +2241,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -2064,9 +2303,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -2106,8 +2352,12 @@ public class Main {
         }
     }
 
-    public static void case7Destinations(Scanner passengers, routeStarter startLulea, Scanner case7scan) {
-        switch (case7scan.nextInt()) {
+    public static void case7Destinations(Scanner passengers, routeStarter startLulea, int dest7int) {
+        if(dest7int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest7int) {
             case 1:
                 case7Destination1(passengers, startLulea);
                 break;
@@ -2154,9 +2404,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -2209,9 +2466,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -2264,9 +2528,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -2319,9 +2590,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -2374,9 +2652,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -2429,9 +2714,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -2484,9 +2776,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -2539,9 +2838,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -2594,9 +2900,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -2636,8 +2949,12 @@ public class Main {
         }
     }
 
-    public static void case6Destinations(Scanner passengers, routeStarter startSkara, Scanner case6scan) {
-        switch (case6scan.nextInt()) {
+    public static void case6Destinations(Scanner passengers, routeStarter startSkara, int dest6int) {
+        if(dest6int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest6int) {
             case 1:
                 case6Destination1(passengers, startSkara);
                 break;
@@ -2684,9 +3001,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -2739,9 +3063,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -2794,9 +3125,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -2849,9 +3187,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -2904,9 +3249,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -2959,9 +3311,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -3014,9 +3373,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -3069,9 +3435,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -3124,9 +3497,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -3166,8 +3546,12 @@ public class Main {
         }
     }
 
-    public static void case5Destinations(Scanner passengers, routeStarter startKiruna, Scanner case5scan) {
-        switch (case5scan.nextInt()) {
+    public static void case5Destinations(Scanner passengers, routeStarter startKiruna, int dest5int) {
+        if(dest5int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest5int) {
             case 1:
                 case5Destination1(passengers, startKiruna);
                 break;
@@ -3214,9 +3598,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -3269,9 +3660,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -3324,9 +3722,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -3379,9 +3784,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -3434,9 +3846,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -3489,9 +3908,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -3544,9 +3970,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -3599,9 +4032,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -3654,9 +4094,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -3696,8 +4143,12 @@ public class Main {
         }
     }
 
-    public static void case4Destinations(Scanner passengers, routeStarter startMolndal, Scanner case4scan) {
-        switch (case4scan.nextInt()) {
+    public static void case4Destinations(Scanner passengers, routeStarter startMolndal, int dest4int) {
+        if(dest4int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest4int) {
             case 1:
                 case4Destination1(passengers, startMolndal);
                 break;
@@ -3744,9 +4195,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -3799,9 +4257,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -3854,9 +4319,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -3909,9 +4381,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -3964,9 +4443,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -4019,9 +4505,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -4074,9 +4567,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -4129,9 +4629,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -4185,9 +4692,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -4227,8 +4741,12 @@ public class Main {
         }
     }
 
-    public static void case3Destinations(Scanner passengers, routeStarter startVasteras, Scanner case3scan) {
-        switch (case3scan.nextInt()) {
+    public static void case3Destinations(Scanner passengers, routeStarter startVasteras, int dest3int) {
+        if(dest3int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest3int) {
             case 1:
                 case3Destination1(passengers, startVasteras);
                 break;
@@ -4275,9 +4793,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -4330,9 +4855,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -4385,9 +4917,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -4440,9 +4979,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -4495,9 +5041,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -4550,9 +5103,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -4605,9 +5165,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -4660,9 +5227,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stockholm", 100);
@@ -4715,9 +5289,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -4757,8 +5338,12 @@ public class Main {
         }
     }
 
-    public static void case2Destinations(Scanner passengers, routeStarter startStockholm, Scanner case2scan) {
-        switch (case2scan.nextInt()) {
+    public static void case2Destinations(Scanner passengers, routeStarter startStockholm, int dest2int) {
+        if(dest2int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest2int) {
             case 1:
                 case2Destination1(passengers, startStockholm);
                 break;
@@ -4805,9 +5390,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -4860,9 +5452,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -4915,9 +5514,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -4970,9 +5576,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -5025,9 +5638,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -5080,9 +5700,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -5135,9 +5762,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -5190,9 +5824,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -5245,9 +5886,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Malmö", 50);
@@ -5287,8 +5935,12 @@ public class Main {
         }
     }
 
-    public static void case1Destinations(Scanner passengers, routeStarter startMalmo, Scanner case1scan) {
-        switch (case1scan.nextInt()) {
+    public static void case1Destinations(Scanner passengers, routeStarter startMalmo, int dest1int) {
+        if(dest1int>10){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (dest1int) {
             case 1:
                 System.out.println("You cant have the same destination as starting point.");
                 break;
@@ -5335,9 +5987,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Eslöv", 500);
@@ -5390,9 +6049,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Stehag", 450);
@@ -5445,9 +6111,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Maglehem", 400);
@@ -5500,9 +6173,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Luleå", 350);
@@ -5555,9 +6235,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Skara", 300);
@@ -5610,9 +6297,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Kiruna", 250);
@@ -5665,9 +6359,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Mölndal", 200);
@@ -5720,9 +6421,16 @@ public class Main {
         readTransportAlternatives();
 
         //Choose transportation
-        Scanner transportationScan = transportScanner();
-
-        switch (transportationScan.nextInt()){
+        System.out.println("Choose transportation alternative: ");
+        Scanner transportationScan = new Scanner(System.in);
+        // Scanner reads input value to choose switch case
+        System.out.print(">");
+        transportChoice = transportationScan.nextInt();
+        if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+        switch (transportChoice) {
             case 1:
                 System.out.println("You chose to go by train");
                 routeTransport train = new routeTransport("Train",100,"Västerås", 150);
@@ -5775,9 +6483,16 @@ public class Main {
             readTransportAlternatives();
 
             //Choose transportation
-            Scanner transportationScan = transportScanner();
-
-            switch (transportationScan.nextInt()) {
+            System.out.println("Choose transportation alternative: ");
+            Scanner transportationScan = new Scanner(System.in);
+            // Scanner reads input value to choose switch case
+            System.out.print(">");
+            transportChoice = transportationScan.nextInt();
+            if(transportChoice>3){
+            System.out.println("You have to choose a number within range.");
+            runTravelAgent=false;
+        }
+            switch (transportChoice) {
                 case 1:
                     System.out.println("You chose to go by train");
                     routeTransport train = new routeTransport("Train", 100, "Stockholm", 100);
@@ -5822,25 +6537,19 @@ public class Main {
     }
 
     public static void buyTicket(Scanner transportationScan) {
-        //Do you want to but the ticket?
-        System.out.println("Would you like to by your tiket y/n ?");
-        // User input i saved in buyTicket
-        String buyTicket = transportationScan.next();
-        if(buyTicket.equalsIgnoreCase("y")){
-            System.out.println("Congratulations you have bought a ticket");
-        }
-        else{
-            System.out.println("Come again and make new travel arrangements");
-        }
-    }
-
-    public static Scanner transportScanner() {
-        // Ask the user to input integer to choose transport alternatives
-        System.out.println("Choose transportation alternative: ");
-        Scanner transportationScan = new Scanner(System.in);
-        // Scanner reads input value to choose switch case
-        System.out.print(">");
-        return transportationScan;
+            //Do you want to but the ticket?
+            System.out.println("Would you like to by your tiket y/n ?");
+            // User input i saved in buyTicket
+            String buyTicket = transportationScan.next();
+            if (buyTicket.equalsIgnoreCase("y")) {
+                System.out.println("Congratulations you have bought a ticket");
+            } else if (buyTicket.equalsIgnoreCase("n")) {
+                System.out.println("Come again and make new travel arrangements");
+            }
+            //If input is anything else than y or n this message is received
+            else {
+                System.out.println("You can only type referenced characters");
+            }
     }
 
     public static void readTransportAlternatives() {
@@ -5855,6 +6564,7 @@ public class Main {
                 System.out.println(transportScanner.nextLine());
             }
         }
+        //If the file cannot be found a File Not Found Exception will be thrown and a warning text printed.
         catch(FileNotFoundException e){
             System.out.println("Trouble reading file");
         }
@@ -5867,6 +6577,24 @@ public class Main {
         try {
             //Create new scanner object "routeScanner" that reads "routeFile"
             Scanner routeScanner = new Scanner(startFile);
+            //While the File has a new line the scanner will read it and print it.
+            while (routeScanner.hasNextLine()) {
+                System.out.println(routeScanner.nextLine());
+            }
+        }
+        //If the file cannot be found a File Not Found Exception will be thrown and a warning text printed.
+        catch(FileNotFoundException e){
+            System.out.println("Trouble reading file");
+        }
+    }
+
+    public static void travelTo(){
+        //Create file object from file "routeDestination"
+        File destinationFile = new File("./src/InformationFolder/routeDestination");
+        //Create try catch to be able to catch error if file is not found
+        try {
+            //Create new scanner object "routeScanner" that reads "routeFile"
+            Scanner routeScanner = new Scanner(destinationFile);
             //While the File has a new line the scanner will read it and print it.
             while (routeScanner.hasNextLine()) {
                 System.out.println(routeScanner.nextLine());
