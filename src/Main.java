@@ -1,4 +1,3 @@
-import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
@@ -28,9 +27,9 @@ public class Main {
             }
 
     }
-
+    // This is the game loop
     public static void travelLoop(){
-        System.out.println("Do you want to continue using the travel assistant?");
+        System.out.println("Do you want to start over using the travel assistant?");
         System.out.println("Yes");
         System.out.println("No");
         System.out.print("> ");
@@ -44,6 +43,7 @@ public class Main {
         }
     }
 
+    //Switch cases for making choices
     public static void makingChoices() {
         //Create scanner object for passengers used later in code.
         Scanner passengers = new Scanner(System.in);
@@ -52,6 +52,7 @@ public class Main {
         chooseStartingPoint(passengers);
     }
 
+    //Switch cases for choosing starting point
     public static void chooseStartingPoint(Scanner passengers) {
             try {
                 //Creating scanner object for choosing starting point with integer numbers for switch case
@@ -261,6 +262,7 @@ public class Main {
             }
         }
 
+        // Methods for individual destinations
     public static void case10Destinations(Scanner passengers, routeStarter startEslov, int dest10int) {
         if(dest10int>10){
             System.out.println("You have to choose a number within range.");
@@ -310,6 +312,7 @@ public class Main {
         }
     }
 
+    // Destinations, transportchoice, passengers and confirmation...
     public static void case10Destination9(Scanner passengers, routeStarter startEslov) {
             // Create an object from routeDestination class. It gets a destination cost that can be used to calculate
             // the cost of a route.
