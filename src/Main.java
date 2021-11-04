@@ -6539,6 +6539,7 @@ public class Main {
             }
     }
 
+    //Method for deciding if buy ticket
     public static void buyTicket(Scanner transportationScan) {
             //Do you want to but the ticket?
             System.out.println("Would you like to by your tiket y/n ?");
@@ -6555,6 +6556,7 @@ public class Main {
             }
     }
 
+    //What kind of transports are available
     public static void readTransportAlternatives() {
         // Create file object from file "transportAlternatives
         File transportAlternatives = new File("./src/InformationFolder/transportAlternatives");
